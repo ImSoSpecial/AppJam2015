@@ -14,4 +14,19 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_example">Example action</string>
+    <string name="title_activity_intro_screen">IntroScreen</string>
+    <string name="introparagraph">
+        Hello friends, welcyum 2 our app!11 Just kidding. \n
+        Hello there! Welcome for to our app. \n
+        Right now our team consists of \n
+            \tAdrian Vasquez \n
+            \tEfrain Coyt\n
+            \tKevin Pham\n
+            \tJonathan Mak\n
+            \tWilliam Yang\n
+        No, this is not actually our introduction.
+
+
+    </string>
+    <string name="title_activity_make_account">MakeAccount</string>
 </resources>
