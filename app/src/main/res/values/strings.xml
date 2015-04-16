@@ -6,9 +6,9 @@
     <string name="SplashScreenTitle">JWAKE App Title Here!!</string>
     <string name="title_activity_home_screen">HomeScreen</string>
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Name here</string>
+    <string name="title_section2">Account section here</string>
+    <string name="title_section3">Home</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -19,7 +19,7 @@
         Hello friends, welcyum 2 our app!11 Just kidding. \n
         Hello there! Welcome for to our app. \n
         Right now our team consists of \n
-            \tAdrian Vasquez \n
+            \tAdrian Vazquez \n
             \tEfrain Coyt\n
             \tKevin Pham\n
             \tJonathan Mak\n
