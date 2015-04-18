@@ -91,6 +91,7 @@ public class HomeScreen extends ActionBarActivity
         return super.onCreateOptionsMenu(menu);
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -105,6 +106,7 @@ public class HomeScreen extends ActionBarActivity
 
         return super.onOptionsItemSelected(item);
     }
+
 
     /**
      * A placeholder fragment containing a simple view.
