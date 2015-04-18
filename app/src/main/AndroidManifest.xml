@@ -32,6 +32,10 @@
             android:name=".activity_screen"
             android:label="@string/title_activity_activity_screen" >
         </activity>
+        <activity
+            android:name=".EndTask"
+            android:label="@string/title_activity_end_task" >
+        </activity>
     </application>
 
 </manifest>
