@@ -73,13 +73,13 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4 Star"
+            android:text="4 Stars"
             android:id="@+id/radioButton4" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5 Star"
+            android:text="5 Stars"
             android:id="@+id/radioButton5" />
     </RadioGroup>
 
