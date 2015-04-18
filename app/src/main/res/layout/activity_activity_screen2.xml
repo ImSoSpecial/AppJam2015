@@ -10,13 +10,12 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="Activities"
-        android:textSize="50dp" />
+        android:textSize="50sp" />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/textView2"
-        android:layout_above="@id/button"
         android:id="@+id/listView"
         android:layout_centerHorizontal="true">
     </ListView>
@@ -35,7 +34,7 @@
         android:layout_height="wrap_content"
         android:text="Finish"
         android:id="@+id/button2"
-        android:layout_below="@+id/listView"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>
