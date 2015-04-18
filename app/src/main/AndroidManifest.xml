@@ -28,6 +28,10 @@
             android:name=".MakeAccount"
             android:label="@string/title_activity_make_account" >
         </activity>
+        <activity
+            android:name=".activity_screen"
+            android:label="@string/title_activity_activity_screen" >
+        </activity>
     </application>
 
 </manifest>

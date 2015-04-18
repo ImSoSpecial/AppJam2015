@@ -10,23 +10,15 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="Activities"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="50dp" />
 
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button"
-        android:layout_below="@+id/textView2"
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textView2"
+        android:id="@+id/listView"
         android:layout_centerHorizontal="true">
+    </ListView>
 
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"></ListView>
-    </ScrollView>
 
     <Button
         android:id="@+id/button"
@@ -41,8 +33,16 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+
+
+
+
+
+
+        android:text="Finish"
+        android:id="@+id/button2"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/scrollView"
-        android:text="Finish" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true" />
+
 </RelativeLayout>
