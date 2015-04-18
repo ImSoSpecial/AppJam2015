@@ -28,6 +28,10 @@
             android:name=".MakeAccount"
             android:label="@string/title_activity_make_account" >
         </activity>
+        <activity
+            android:name=".TaskInstructions"
+            android:label="@string/title_activity_task_instructions" >
+        </activity>
     </application>
 
 </manifest>
