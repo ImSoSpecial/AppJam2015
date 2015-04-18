@@ -9,7 +9,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="Activities"
+        android:text="Activities">
+    </TextView>
 
     <ListView
         android:layout_width="match_parent"
@@ -30,15 +31,8 @@
         android:text="Back" />
 
     <Button
-        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-
-
-
-
-
         android:text="Finish"
         android:id="@+id/button2"
         android:layout_alignParentRight="true"
