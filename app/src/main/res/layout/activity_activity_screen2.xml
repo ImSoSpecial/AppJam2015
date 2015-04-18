@@ -12,20 +12,14 @@
         android:text="Activities"
         android:textSize="50dp" />
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textView2"
-        android:layout_above="@+id/button">
     <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textView2"
+        android:layout_above="@id/button"
         android:id="@+id/listView"
         android:layout_centerHorizontal="true">
-        </ListView>
-    </ScrollView>
+    </ListView>
 
     <Button
         android:layout_width="wrap_content"
@@ -41,7 +35,7 @@
         android:layout_height="wrap_content"
         android:text="Finish"
         android:id="@+id/button2"
-        android:layout_below="@+id/scrollView"
+        android:layout_below="@+id/listView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>
