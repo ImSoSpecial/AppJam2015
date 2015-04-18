@@ -29,5 +29,6 @@
 
     </string>
     <string name="title_activity_make_account">MakeAccount</string>
-    <string name="title_activity_task_instructions">TaskInstructions</string>
+    <string name="title_activity_activity_screen">activity_screen</string>
+    <string name="title_activity_end_task">EndTask</string>
 </resources>
