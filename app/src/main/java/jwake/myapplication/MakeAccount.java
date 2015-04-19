@@ -1,6 +1,7 @@
 package jwake.myapplication;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -106,6 +107,16 @@ public class MakeAccount extends ActionBarActivity
         return super.onOptionsItemSelected(item);
     }
 
+    public void onFinishButtonClick(View view)
+    {
+        SharedPreferences introFirstTime = getSharedPreferences("introInfo", Context.MODE_PRIVATE);
+        SharedPreferences.Editor firstTimeEditor = introFirstTime.edit();
+
+        firstTimeEditor.putBoolean("introInfo", false);
+
+        firstTimeEditor.apply();
+    }
+
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -144,6 +155,7 @@ public class MakeAccount extends ActionBarActivity
             ((MakeAccount) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
+
     }
 
 }

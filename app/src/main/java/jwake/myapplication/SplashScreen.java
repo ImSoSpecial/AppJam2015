@@ -2,7 +2,9 @@ package jwake.myapplication;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -19,9 +21,19 @@ public class SplashScreen extends Activity {
 
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreen.this, HomeScreen.class);
+                SharedPreferences introFirstTime = getSharedPreferences("introInfo", Context.MODE_PRIVATE);
+                Intent i;
+                if(introFirstTime.getBoolean("introInfo", false)) {
+                    i = new Intent(SplashScreen.this, HomeScreen.class);
+                }
+
+                else{
+                    i = new Intent(SplashScreen.this, IntroScreen.class);
+                }
+
                 startActivity(i);
                 finish();
+
             }
         }, 3000);
     }
