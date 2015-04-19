@@ -1,6 +1,7 @@
 package jwake.myapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -45,6 +46,11 @@ public class EndTask extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+    }
+
+    public void onFinishClicked(View view) {
+        Intent intent = new Intent(this, activity_screen.class);
+        startActivity(intent);
     }
 
     @Override

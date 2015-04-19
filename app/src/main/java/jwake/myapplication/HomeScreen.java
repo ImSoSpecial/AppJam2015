@@ -1,6 +1,7 @@
 package jwake.myapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -46,6 +47,22 @@ public class HomeScreen extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
     }
+
+    public void onActivityClicked(View view) {
+        Intent intent = new Intent(this, IntroScreen.class);
+        startActivity(intent);
+    }
+
+    public void onRecordsClicked(View view) {
+        Intent intent = new Intent(this, TaskInstructions.class);
+        startActivity(intent);
+    }
+
+
+
+
+
+
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
