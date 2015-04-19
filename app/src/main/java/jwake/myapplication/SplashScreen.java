@@ -8,7 +8,6 @@ import android.os.Handler;
 import android.view.View;
 
 
-
 public class SplashScreen extends Activity {
 
     @Override
