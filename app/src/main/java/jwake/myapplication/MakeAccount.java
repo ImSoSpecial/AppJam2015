@@ -1,6 +1,7 @@
 package jwake.myapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -112,9 +113,11 @@ public class MakeAccount extends ActionBarActivity
         SharedPreferences introFirstTime = getSharedPreferences("introInfo", Context.MODE_PRIVATE);
         SharedPreferences.Editor firstTimeEditor = introFirstTime.edit();
 
-        firstTimeEditor.putBoolean("introInfo", false);
+        firstTimeEditor.putBoolean("introInfo", true);
 
         firstTimeEditor.apply();
+        Intent i = new Intent(this, HomeScreen.class);
+        startActivity(i);
     }
 
     /**
