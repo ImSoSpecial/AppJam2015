@@ -36,7 +36,7 @@
     </style>
 
     <style name="ActionBar.Solid.Jmaketheme" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <item name="background">@drawable/ab_solid_jmaketheme</item>
+        <item name="background">@drawable/ab_texture_tile_jmaketheme</item>
         <item name="backgroundStacked">@drawable/ab_stacked_solid_jmaketheme</item>
         <item name="backgroundSplit">@drawable/ab_bottom_solid_jmaketheme</item>
         <item name="progressBarStyle">@style/ProgressBar.Jmaketheme</item>
