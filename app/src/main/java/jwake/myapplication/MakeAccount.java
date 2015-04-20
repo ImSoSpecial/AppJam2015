@@ -16,7 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 
 
 public class MakeAccount extends ActionBarActivity
@@ -35,17 +37,23 @@ public class MakeAccount extends ActionBarActivity
 
     private EditText parentName;
     private EditText parentAge;
-    private EditText parentGender;
+    private RadioButton parentMale;
+    private RadioButton parentFemale;
+
     private EditText childName;
     private EditText childAge;
-    private EditText childGender;
+    private RadioButton childMale;
+    private RadioButton childFemale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_account);
 
-
+        parentMale = (RadioButton) findViewById(R.id.MaleGenderRadioButton);
+        parentFemale = (RadioButton) findViewById(R.id.FemaleGenderRadioButton);
+        childMale = (RadioButton) findViewById(R.id.CMaleGenderRadioButton);
+        childFemale = (RadioButton) findViewById(R.id.CFemaleGenderRadioButton);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -120,11 +128,8 @@ public class MakeAccount extends ActionBarActivity
     {
         parentName = (EditText) findViewById(R.id.ParentNameEdit);
         parentAge = (EditText) findViewById(R.id.ParentAgeEdit);
-        parentGender = (EditText) findViewById(R.id.ParentGenderEdit);
-
         childName = (EditText) findViewById(R.id.ChildNameEdit);
         childAge = (EditText) findViewById(R.id.ChildAgeEdit);
-        childGender = (EditText) findViewById(R.id.ChildGenderEdit);
 
         //save info for parent
         SharedPreferences P_Name = getSharedPreferences("parentName", Context.MODE_PRIVATE);
@@ -138,10 +143,12 @@ public class MakeAccount extends ActionBarActivity
         P_Age_Editor.putString("parentAge",parentAge.getText().toString());
         P_Age_Editor.apply();
 
+        /*
         SharedPreferences P_Gender = getSharedPreferences("parentGender", Context.MODE_PRIVATE);
         SharedPreferences.Editor P_Gender_Editor = P_Gender.edit();
         P_Gender_Editor.putString("parentGender",parentGender.getText().toString());
         P_Gender_Editor.apply();
+        */
 
         //save info for child
         SharedPreferences C_Name = getSharedPreferences("childName", Context.MODE_PRIVATE);
@@ -154,11 +161,12 @@ public class MakeAccount extends ActionBarActivity
         C_Age_Editor.putString("childAge",childAge.getText().toString());
         C_Age_Editor.apply();
 
+        /*
         SharedPreferences C_Gender = getSharedPreferences("childGender", Context.MODE_PRIVATE);
         SharedPreferences.Editor C_Gender_Editor = C_Gender.edit();
         C_Gender_Editor.putString("childGender",childGender.getText().toString());
         C_Gender_Editor.apply();
-
+        */
 
         //isempty
         if(P_Name.getString("parentName","").equals("")) {
@@ -167,10 +175,10 @@ public class MakeAccount extends ActionBarActivity
         else if(P_Age.getString("parentAge","").equals("")) {
             parentAge.setHintTextColor(Color.RED);
         }
+        /*
         else if(P_Gender.getString("parentGender","").equals("")) {
-            //parentName.setHint("Name");
             parentGender.setHintTextColor(Color.RED);
-        }
+        }*/
 
         else if(C_Name.getString("childName","").equals("")) {
             childName.setHintTextColor(Color.RED);
@@ -178,10 +186,11 @@ public class MakeAccount extends ActionBarActivity
         else if(C_Age.getString("childAge","").equals("")) {
             childAge.setHintTextColor(Color.RED);
         }
+        /*
         else if(C_Gender.getString("childGender","").equals("")) {
             //parentName.setHint("Name");
             childGender.setHintTextColor(Color.RED);
-        }
+        }*/
 
         else {
             SharedPreferences introFirstTime = getSharedPreferences("introInfo", Context.MODE_PRIVATE);

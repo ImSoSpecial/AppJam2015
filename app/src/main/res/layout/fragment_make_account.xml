@@ -64,15 +64,32 @@
                     android:paddingLeft="10dp"
                     android:singleLine="true" />
 
-                <EditText
-                    android:id="@+id/ParentGenderEdit"
-                    android:layout_width="250dp"
+                <RadioGroup
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/ParentRadioGroup"
                     android:layout_below="@+id/ParentAgeEdit"
-                    android:ems="10"
-                    android:hint="Gender"
-                    android:paddingLeft="10dp"
-                    android:singleLine="true" />
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/MaleGenderRadioButton"
+                        android:layout_below="@+id/ParentAgeEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Male" />
+
+                    <RadioButton
+                        android:id="@+id/FemaleGenderRadioButton"
+                        android:layout_toRightOf="@+id/MaleGenderRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="50dp"
+                        android:text="Female" />
+                </RadioGroup>
 
             </RelativeLayout>
 
@@ -114,15 +131,33 @@
                     android:paddingLeft="10dp"
                     android:singleLine="true" />
 
-                <EditText
-                    android:id="@+id/ChildGenderEdit"
-                    android:layout_width="250dp"
+                <RadioGroup
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/ChildRadioGroup"
                     android:layout_below="@+id/ChildAgeEdit"
-                    android:ems="10"
-                    android:hint="Gender"
+                    android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/CMaleGenderRadioButton"
+                    android:layout_below="@+id/ChildAgeEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
-                    android:singleLine="true" />
+                    android:layout_marginTop="5dp"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/CFemaleGenderRadioButton"
+                    android:layout_below="@+id/ChildAgeEdit"
+                    android:layout_toRightOf="@+id/CMaleGenderRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="50dp"
+                    android:text="Female" />
+                </RadioGroup>
 
             </RelativeLayout>
 
