@@ -6,11 +6,6 @@
     tools:context="jwake.myapplication.MakeAccount$PlaceholderFragment">
 
     <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
         android:id="@+id/MakeYourAccountTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,6 +15,20 @@
         android:text="Make Your Account"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="36dp" />
+
+    <RelativeLayout
+        android:id="@+id/ParentContainer"
+        android:layout_below="@+id/MakeYourAccountTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/ParentInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parent Information"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="32dp" />
 
     <EditText
         android:id="@+id/ParentNameEdit"
@@ -53,20 +62,18 @@
         android:singleLine="true"
         android:paddingLeft="10dp"/>
 
-    <TextView
-        android:id="@+id/ParentInfoText"
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ChildContainer"
+        android:layout_below="@+id/ParentContainer"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/MakeYourAccountTitle"
-        android:text="Parent Information"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="32dp" />
+        android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/ChildInfoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ParentGenderEdit"
         android:layout_marginTop="45dp"
         android:text="Child Information"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -105,6 +112,7 @@
         android:singleLine="true"
         android:paddingLeft="10dp"/>
 
+        </RelativeLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -112,7 +120,6 @@
         android:id="@+id/FinishButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:onClick="onFinishButtonClick" />
 
 </RelativeLayout>
