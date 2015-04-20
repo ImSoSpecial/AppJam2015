@@ -49,7 +49,7 @@ public class HomeScreen extends ActionBarActivity
     }
 
     public void onActivityClicked(View view) {
-        Intent intent = new Intent(this, IntroScreen.class);
+        Intent intent = new Intent(this, activity_screen.class);
         startActivity(intent);
     }
 

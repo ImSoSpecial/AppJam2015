@@ -1,6 +1,7 @@
 package jwake.myapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -110,6 +111,11 @@ public class ResultsScreen extends ActionBarActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onFinishClicked(View view) {
+        Intent intent = new Intent(this, HomeScreen.class);
+        startActivity(intent);
     }
 
     /**
