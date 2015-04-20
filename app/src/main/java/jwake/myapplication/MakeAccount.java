@@ -3,22 +3,20 @@ package jwake.myapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+import android.widget.EditText;
 
 
 public class MakeAccount extends ActionBarActivity
@@ -34,10 +32,20 @@ public class MakeAccount extends ActionBarActivity
      */
     private CharSequence mTitle;
 
+
+    private EditText parentName;
+    private EditText parentAge;
+    private EditText parentGender;
+    private EditText childName;
+    private EditText childAge;
+    private EditText childGender;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_account);
+
+
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -110,14 +118,81 @@ public class MakeAccount extends ActionBarActivity
 
     public void onFinishButtonClick(View view)
     {
-        SharedPreferences introFirstTime = getSharedPreferences("introInfo", Context.MODE_PRIVATE);
-        SharedPreferences.Editor firstTimeEditor = introFirstTime.edit();
+        parentName = (EditText) findViewById(R.id.ParentNameEdit);
+        parentAge = (EditText) findViewById(R.id.ParentAgeEdit);
+        parentGender = (EditText) findViewById(R.id.ParentGenderEdit);
 
-        firstTimeEditor.putBoolean("introInfo", true);
+        childName = (EditText) findViewById(R.id.ChildNameEdit);
+        childAge = (EditText) findViewById(R.id.ChildAgeEdit);
+        childGender = (EditText) findViewById(R.id.ChildGenderEdit);
 
-        firstTimeEditor.apply();
-        Intent i = new Intent(this, HomeScreen.class);
-        startActivity(i);
+        //save info for parent
+        SharedPreferences P_Name = getSharedPreferences("parentName", Context.MODE_PRIVATE);
+        SharedPreferences.Editor P_Name_Editor = P_Name.edit();
+        P_Name_Editor.putString("parentName",parentName.getText().toString());
+        P_Name_Editor.apply();
+
+        //Might need to change to int
+        SharedPreferences P_Age = getSharedPreferences("parentAge", Context.MODE_PRIVATE);
+        SharedPreferences.Editor P_Age_Editor = P_Age.edit();
+        P_Age_Editor.putString("parentAge",parentAge.getText().toString());
+        P_Age_Editor.apply();
+
+        SharedPreferences P_Gender = getSharedPreferences("parentGender", Context.MODE_PRIVATE);
+        SharedPreferences.Editor P_Gender_Editor = P_Gender.edit();
+        P_Gender_Editor.putString("parentGender",parentGender.getText().toString());
+        P_Gender_Editor.apply();
+
+        //save info for child
+        SharedPreferences C_Name = getSharedPreferences("childName", Context.MODE_PRIVATE);
+        SharedPreferences.Editor C_Name_Editor = C_Name.edit();
+        C_Name_Editor.putString("childName",childName.getText().toString());
+        C_Name_Editor.apply();
+
+        SharedPreferences C_Age = getSharedPreferences("childAge", Context.MODE_PRIVATE);
+        SharedPreferences.Editor C_Age_Editor = C_Age.edit();
+        C_Age_Editor.putString("childAge",childAge.getText().toString());
+        C_Age_Editor.apply();
+
+        SharedPreferences C_Gender = getSharedPreferences("childGender", Context.MODE_PRIVATE);
+        SharedPreferences.Editor C_Gender_Editor = C_Gender.edit();
+        C_Gender_Editor.putString("childGender",childGender.getText().toString());
+        C_Gender_Editor.apply();
+
+
+        //isempty
+        if(P_Name.getString("parentName","").equals("")) {
+            parentName.setHintTextColor(Color.RED);
+        }
+        else if(P_Age.getString("parentAge","").equals("")) {
+            parentAge.setHintTextColor(Color.RED);
+        }
+        else if(P_Gender.getString("parentGender","").equals("")) {
+            //parentName.setHint("Name");
+            parentGender.setHintTextColor(Color.RED);
+        }
+
+        else if(C_Name.getString("childName","").equals("")) {
+            childName.setHintTextColor(Color.RED);
+        }
+        else if(C_Age.getString("childAge","").equals("")) {
+            childAge.setHintTextColor(Color.RED);
+        }
+        else if(C_Gender.getString("childGender","").equals("")) {
+            //parentName.setHint("Name");
+            childGender.setHintTextColor(Color.RED);
+        }
+
+        else {
+            SharedPreferences introFirstTime = getSharedPreferences("introInfo", Context.MODE_PRIVATE);
+            SharedPreferences.Editor firstTimeEditor = introFirstTime.edit();
+
+            firstTimeEditor.putBoolean("introInfo", true);
+
+            firstTimeEditor.apply();
+            Intent i = new Intent(this, HomeScreen.class);
+            startActivity(i);
+        }
     }
 
     /**

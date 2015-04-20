@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="12dp"
+    android:background="@drawable/gradient_bg"
     tools:context="jwake.myapplication.MakeAccount$PlaceholderFragment">
 
     <TextView
@@ -16,110 +17,122 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="36dp" />
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/MakeYourAccountTitle">
+
     <RelativeLayout
-        android:id="@+id/ParentContainer"
-        android:layout_below="@+id/MakeYourAccountTitle"
+        android:id="@+id/WholeContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/ParentInfoText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Parent Information"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="32dp" />
+        <RelativeLayout
+            android:id="@+id/ParentContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/ParentNameEdit"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ParentInfoText"
-        android:layout_marginTop="40dp"
-        android:hint="Name"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:paddingLeft="10dp"/>
+            <TextView
+                android:id="@+id/ParentInfoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parent Information"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="32dp" />
 
-    <EditText
-        android:id="@+id/ParentAgeEdit"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ParentNameEdit"
-        android:ems="10"
-        android:hint="Age"
-        android:inputType="number"
-        android:singleLine="true"
-        android:paddingLeft="10dp"/>
+            <EditText
+                android:id="@+id/ParentNameEdit"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ParentInfoText"
+                android:layout_marginTop="40dp"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp" />
 
-    <EditText
-        android:id="@+id/ParentGenderEdit"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ParentAgeEdit"
-        android:ems="10"
-        android:hint="Gender"
-        android:singleLine="true"
-        android:paddingLeft="10dp"/>
+            <EditText
+                android:id="@+id/ParentAgeEdit"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ParentNameEdit"
+                android:ems="10"
+                android:hint="Age"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
 
-    </RelativeLayout>
+            <EditText
+                android:id="@+id/ParentGenderEdit"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ParentAgeEdit"
+                android:ems="10"
+                android:hint="Gender"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
 
-    <RelativeLayout
-        android:id="@+id/ChildContainer"
-        android:layout_below="@+id/ParentContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/ChildInfoText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:text="Child Information"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="32dp" />
-
-    <EditText
-        android:id="@+id/ChildNameEdit"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ChildInfoText"
-        android:layout_marginTop="45dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        android:singleLine="true"
-        android:paddingLeft="10dp"/>
-
-    <EditText
-        android:id="@+id/ChildAgeEdit"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ChildNameEdit"
-        android:ems="10"
-        android:hint="Age"
-        android:inputType="number"
-        android:singleLine="true"
-        android:paddingLeft="10dp"/>
-
-    <EditText
-        android:id="@+id/ChildGenderEdit"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ChildAgeEdit"
-        android:ems="10"
-        android:hint="Gender"
-        android:singleLine="true"
-        android:paddingLeft="10dp"/>
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/ChildContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ParentContainer">
+
+            <TextView
+                android:id="@+id/ChildInfoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:text="Child Information"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="32dp" />
+
+            <EditText
+                android:id="@+id/ChildNameEdit"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ChildInfoText"
+                android:layout_marginTop="45dp"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/ChildAgeEdit"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ChildNameEdit"
+                android:ems="10"
+                android:hint="Age"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/ChildGenderEdit"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ChildAgeEdit"
+                android:ems="10"
+                android:hint="Gender"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+    </ScrollView>
+
     <Button
+        android:id="@+id/FinishButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Finish"
-        android:id="@+id/FinishButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:onClick="onFinishButtonClick" />
+        android:onClick="onFinishButtonClick"
+        android:text="Finish" />
 
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package jwake.myapplication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -100,7 +101,7 @@ public class NavigationDrawerFragment extends Fragment {
         });
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
-                android.R.layout.simple_list_item_activated_1,
+                R.layout.nav_drawer_layout,
                 android.R.id.text1,
                 new String[]{
                         getString(R.string.title_section1),
@@ -111,6 +112,7 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.title_section6),
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
+
         return mDrawerListView;
     }
 
@@ -255,11 +257,12 @@ public class NavigationDrawerFragment extends Fragment {
             return true;
         }
 
+        /*
         if (item.getItemId() == R.id.action_example) {
             Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
             return true;
         }
-
+        */
         return super.onOptionsItemSelected(item);
     }
 
