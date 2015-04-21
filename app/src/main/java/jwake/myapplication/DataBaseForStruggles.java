@@ -37,6 +37,7 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
                 COLUMN_TASK + " TEXT," +
                 ");";
         db.execSQL(query);
+        addQuestions();
     }
 
     @Override
@@ -44,6 +45,19 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_STRUGGLEINFO);
         onCreate(db);
     }
+
+
+    public void addQuestions() {
+        SurveyQuestions q1 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question1 here", 1);
+        SurveyQuestions q2 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question2 here", 2);
+        SurveyQuestions q3 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question3 here", 2);
+
+        SurveyQuestions q4 = new SurveyQuestions("Maladaptive Behavior Index", "Externalizing", "", "question1 here", 2);
+
+        SurveyQuestions qx = new SurveyQuestions("Maladaptive Behavior Index", "Other", "", "question1 here", 1);
+
+    }
+
 
     public void addInfo(String[] category, String[][] subCategory) {
 

@@ -10,26 +10,28 @@
     tools:context="jwake.myapplication.HomeScreen$PlaceholderFragment"
     android:id="@+id/Home">
 
-
-    <Button
-        android:id="@+id/ActivityButton"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:onClick="onActivityClicked"
-        android:background="@drawable/custom_button"
-        android:text="Activity" />
+        android:layout_centerInParent="true">
+        <Button
+            android:id="@+id/ActivityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onActivityClicked"
+            android:background="@drawable/custom_button"
+            android:text="Activity" />
 
-    <Button
-        android:id="@+id/RecordsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ActivityButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="88dp"
-        android:onClick="onRecordsClicked"
-        android:background="@drawable/custom_button"
-        android:text="Records" />
+        <Button
+            android:id="@+id/RecordsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ActivityButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:onClick="onRecordsClicked"
+            android:background="@drawable/custom_button"
+            android:text="Records" />
+    </RelativeLayout>
 
 </RelativeLayout>
