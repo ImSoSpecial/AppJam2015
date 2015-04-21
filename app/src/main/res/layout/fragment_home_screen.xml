@@ -18,6 +18,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:onClick="onActivityClicked"
+        android:background="@drawable/custom_button"
         android:text="Activity" />
 
     <Button
@@ -28,6 +29,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="88dp"
         android:onClick="onRecordsClicked"
+        android:background="@drawable/custom_button"
         android:text="Records" />
 
 </RelativeLayout>
