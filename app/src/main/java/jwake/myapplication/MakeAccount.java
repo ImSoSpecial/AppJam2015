@@ -16,9 +16,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 
 public class MakeAccount extends ActionBarActivity
@@ -49,11 +50,6 @@ public class MakeAccount extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_account);
-
-        parentMale = (RadioButton) findViewById(R.id.MaleGenderRadioButton);
-        parentFemale = (RadioButton) findViewById(R.id.FemaleGenderRadioButton);
-        childMale = (RadioButton) findViewById(R.id.CMaleGenderRadioButton);
-        childFemale = (RadioButton) findViewById(R.id.CFemaleGenderRadioButton);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -128,71 +124,113 @@ public class MakeAccount extends ActionBarActivity
     {
         parentName = (EditText) findViewById(R.id.ParentNameEdit);
         parentAge = (EditText) findViewById(R.id.ParentAgeEdit);
+        parentMale = (RadioButton) findViewById(R.id.MaleGenderRadioButton);
+        parentFemale = (RadioButton) findViewById(R.id.FemaleGenderRadioButton);
+
         childName = (EditText) findViewById(R.id.ChildNameEdit);
         childAge = (EditText) findViewById(R.id.ChildAgeEdit);
+        childMale = (RadioButton) findViewById(R.id.CMaleGenderRadioButton);
+        childFemale = (RadioButton) findViewById(R.id.CFemaleGenderRadioButton);
 
+        boolean allFilled = true;
         //save info for parent
-        SharedPreferences P_Name = getSharedPreferences("parentName", Context.MODE_PRIVATE);
-        SharedPreferences.Editor P_Name_Editor = P_Name.edit();
-        P_Name_Editor.putString("parentName",parentName.getText().toString());
-        P_Name_Editor.apply();
 
-        //Might need to change to int
-        SharedPreferences P_Age = getSharedPreferences("parentAge", Context.MODE_PRIVATE);
-        SharedPreferences.Editor P_Age_Editor = P_Age.edit();
-        P_Age_Editor.putString("parentAge",parentAge.getText().toString());
-        P_Age_Editor.apply();
+        if(!parentName.getText().toString().isEmpty()) {
+            SharedPreferences P_Name = getSharedPreferences("parentName", Context.MODE_PRIVATE);
+            SharedPreferences.Editor P_Name_Editor = P_Name.edit();
+            P_Name_Editor.putString("parentName", parentName.getText().toString());
+            P_Name_Editor.apply();
+            parentName.setHintTextColor(Color.BLACK);
+        }
+        else {
+            parentName.setHintTextColor(Color.RED);
+            allFilled = false;
+        }
 
-        /*
-        SharedPreferences P_Gender = getSharedPreferences("parentGender", Context.MODE_PRIVATE);
-        SharedPreferences.Editor P_Gender_Editor = P_Gender.edit();
-        P_Gender_Editor.putString("parentGender",parentGender.getText().toString());
-        P_Gender_Editor.apply();
-        */
+        if(!parentAge.getText().toString().isEmpty()) {
+            //Might need to change to int
+            SharedPreferences P_Age = getSharedPreferences("parentAge", Context.MODE_PRIVATE);
+            SharedPreferences.Editor P_Age_Editor = P_Age.edit();
+            P_Age_Editor.putString("parentAge", parentAge.getText().toString());
+            P_Age_Editor.apply();
+            parentAge.setHintTextColor(Color.BLACK);
+        }
+        else {
+            parentAge.setHintTextColor(Color.RED);
+            allFilled = false;
+        }
+
+        if(parentMale.isChecked() || parentFemale.isChecked()) {
+            if(parentMale.isChecked()) {
+                SharedPreferences P_Gender = getSharedPreferences("parentMale", Context.MODE_PRIVATE);
+                SharedPreferences.Editor P_Gender_Editor = P_Gender.edit();
+                P_Gender_Editor.putString("parentMale", "Male");
+                P_Gender_Editor.apply();
+                parentMale.setTextColor(Color.BLACK);
+            }
+            else {
+                SharedPreferences P_Gender = getSharedPreferences("parentFemale", Context.MODE_PRIVATE);
+                SharedPreferences.Editor P_Gender_Editor = P_Gender.edit();
+                P_Gender_Editor.putString("parentFemale", "Female");
+                P_Gender_Editor.apply();
+                parentFemale.setTextColor(Color.BLACK);
+            }
+        }
+        else {
+            parentMale.setTextColor(Color.RED);
+            parentFemale.setTextColor(Color.RED);
+            allFilled = false;
+        }
 
         //save info for child
-        SharedPreferences C_Name = getSharedPreferences("childName", Context.MODE_PRIVATE);
-        SharedPreferences.Editor C_Name_Editor = C_Name.edit();
-        C_Name_Editor.putString("childName",childName.getText().toString());
-        C_Name_Editor.apply();
-
-        SharedPreferences C_Age = getSharedPreferences("childAge", Context.MODE_PRIVATE);
-        SharedPreferences.Editor C_Age_Editor = C_Age.edit();
-        C_Age_Editor.putString("childAge",childAge.getText().toString());
-        C_Age_Editor.apply();
-
-        /*
-        SharedPreferences C_Gender = getSharedPreferences("childGender", Context.MODE_PRIVATE);
-        SharedPreferences.Editor C_Gender_Editor = C_Gender.edit();
-        C_Gender_Editor.putString("childGender",childGender.getText().toString());
-        C_Gender_Editor.apply();
-        */
-
-        //isempty
-        if(P_Name.getString("parentName","").equals("")) {
-            parentName.setHintTextColor(Color.RED);
+        if(!childName.getText().toString().isEmpty()) {
+            SharedPreferences C_Name = getSharedPreferences("childName", Context.MODE_PRIVATE);
+            SharedPreferences.Editor C_Name_Editor = C_Name.edit();
+            C_Name_Editor.putString("childName", childName.getText().toString());
+            C_Name_Editor.apply();
+            childName.setHintTextColor(Color.BLACK);
         }
-        else if(P_Age.getString("parentAge","").equals("")) {
-            parentAge.setHintTextColor(Color.RED);
-        }
-        /*
-        else if(P_Gender.getString("parentGender","").equals("")) {
-            parentGender.setHintTextColor(Color.RED);
-        }*/
-
-        else if(C_Name.getString("childName","").equals("")) {
-            childName.setHintTextColor(Color.RED);
-        }
-        else if(C_Age.getString("childAge","").equals("")) {
-            childAge.setHintTextColor(Color.RED);
-        }
-        /*
-        else if(C_Gender.getString("childGender","").equals("")) {
-            //parentName.setHint("Name");
-            childGender.setHintTextColor(Color.RED);
-        }*/
-
         else {
+            childName.setHintTextColor(Color.RED);
+            allFilled = false;
+        }
+
+        if(!childAge.getText().toString().isEmpty()) {
+            SharedPreferences C_Age = getSharedPreferences("childAge", Context.MODE_PRIVATE);
+            SharedPreferences.Editor C_Age_Editor = C_Age.edit();
+            C_Age_Editor.putString("childAge", childAge.getText().toString());
+            C_Age_Editor.apply();
+            childAge.setHintTextColor(Color.BLACK);
+        }
+        else {
+            childAge.setHintTextColor(Color.RED);
+            allFilled = false;
+        }
+
+        if(childMale.isChecked() || childFemale.isChecked()) {
+            if(childMale.isChecked()) {
+                SharedPreferences C_Gender = getSharedPreferences("childMale", Context.MODE_PRIVATE);
+                SharedPreferences.Editor C_Gender_Editor = C_Gender.edit();
+                C_Gender_Editor.putString("childMale", "Male");
+                C_Gender_Editor.apply();
+                childMale.setTextColor(Color.BLACK);
+            }
+            else {
+                SharedPreferences C_Gender = getSharedPreferences("childFemale", Context.MODE_PRIVATE);
+                SharedPreferences.Editor C_Gender_Editor = C_Gender.edit();
+                C_Gender_Editor.putString("childFemale", "Female");
+                C_Gender_Editor.apply();
+                childFemale.setTextColor(Color.BLACK);
+            }
+        }
+        else {
+            childMale.setTextColor(Color.RED);
+            childFemale.setTextColor(Color.RED);
+            allFilled = false;
+        }
+
+
+        if(allFilled) {
             SharedPreferences introFirstTime = getSharedPreferences("introInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor firstTimeEditor = introFirstTime.edit();
 
@@ -201,6 +239,9 @@ public class MakeAccount extends ActionBarActivity
             firstTimeEditor.apply();
             Intent i = new Intent(this, HomeScreen.class);
             startActivity(i);
+        }
+        else {
+            Toast.makeText(MakeAccount.this, "Fill out all fields", Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -2,6 +2,7 @@ package jwake.myapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -38,9 +39,11 @@ public class HomeScreen extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
+        SharedPreferences preferences = getSharedPreferences("parentName",Context.MODE_PRIVATE);
+
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        mTitle = "Welcome, "+ preferences.getString("parentName", "user");
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -74,6 +77,7 @@ public class HomeScreen extends ActionBarActivity
     }
 
     public void onSectionAttached(int number) {
+        /*
         switch (number) {
             case 1:
                 mTitle = getString(R.string.title_section1);
@@ -85,6 +89,7 @@ public class HomeScreen extends ActionBarActivity
                 mTitle = getString(R.string.title_section3);
                 break;
         }
+        */
     }
 
     public void restoreActionBar() {
