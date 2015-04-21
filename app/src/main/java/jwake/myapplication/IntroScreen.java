@@ -23,7 +23,7 @@ import android.widget.TextView;
 public class IntroScreen extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
-    DataBaseForStruggles dbManager;
+    //DataBaseForStruggles dbManager;
     private NavigationDrawerFragment mNavigationDrawerFragment;
     private CharSequence mTitle;
 
@@ -36,7 +36,7 @@ public class IntroScreen extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro_screen);
 
-        dbManager = new DataBaseForStruggles(this, null, null, 1);
+        //dbManager = new DataBaseForStruggles(this, null, null, 1);
         //dbManager.addInfo();
 
 

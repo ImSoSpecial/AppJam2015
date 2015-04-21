@@ -48,14 +48,37 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
 
 
     public void addQuestions() {
-        SurveyQuestions q1 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question1 here", 1);
-        SurveyQuestions q2 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question2 here", 2);
-        SurveyQuestions q3 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question3 here", 2);
+        ////// Maladaptive Behavior
+        SurveyQuestions MBIqI1 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question1 here", 1);
+        SurveyQuestions MBIqI2 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question2 here", 2);
+        SurveyQuestions MBIqI3 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question3 here", 2);
 
-        SurveyQuestions q4 = new SurveyQuestions("Maladaptive Behavior Index", "Externalizing", "", "question1 here", 2);
+        SurveyQuestions MBIqE1 = new SurveyQuestions("Maladaptive Behavior Index", "Externalizing", "", "question1 here", 2);
 
-        SurveyQuestions qx = new SurveyQuestions("Maladaptive Behavior Index", "Other", "", "question1 here", 1);
+        SurveyQuestions MBIqO1 = new SurveyQuestions("Maladaptive Behavior Index", "Other", "", "question1 here", 1);
 
+        SurveyQuestions MBIqC1 = new SurveyQuestions("Maladaptive Behavior Index", "Critical Items", "", "question1 here", 2);
+
+
+        ////// Communication
+        SurveyQuestions CDqR1 = new SurveyQuestions("Communication Domain", "Receptive", "", "question1 here", 1);
+        SurveyQuestions CDqR2 = new SurveyQuestions("Communication Domain", "Receptive", "", "question2 here", 1);
+
+        SurveyQuestions CDqE1 = new SurveyQuestions("Communication Domain", "Expressive", "", "question1 here", 1);
+
+        SurveyQuestions CDqW1 = new SurveyQuestions("Communication Domain", "Written", "", "question1 here", 1);
+
+
+        ////// Daily Living Skills
+
+
+        ////// Socialization
+
+
+        ////// Motor Skills
+        SurveyQuestions MSqF1 = new SurveyQuestions("Motor Skills", "Fine", "", "question1 here", 1);
+
+        SurveyQuestions CDqG1 = new SurveyQuestions("Motor Skills", "Gross", "", "question1 here", 1);
     }
 
 
