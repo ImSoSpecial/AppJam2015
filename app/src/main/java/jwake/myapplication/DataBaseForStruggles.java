@@ -19,9 +19,11 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
     public static final String COLUMN_CATEGORY = "category";
     public static final String COLUMN_SUBCATEGORY = "subCategory";
     public static final String COLUMN_SUBSUBCATEGORY = "subSubCategory";
+    public static final String COLUMN_QUESTION = "question";
     public static final String COLUMN_TASK = "task";
 
     private static final String TAG = "DBManagerMessage";
+    private SQLiteDatabase dbase;
 
     public DataBaseForStruggles(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
@@ -29,6 +31,7 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        dbase = db;
         String query = "CREATE TABLE " + TABLE_STRUGGLEINFO + "(" +
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 COLUMN_CATEGORY + " TEXT," +
@@ -50,24 +53,32 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
     public void addQuestions() {
         ////// Maladaptive Behavior
         SurveyQuestions MBIqI1 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question1 here", 1);
+        this.addQuestions(MBIqI1);
         SurveyQuestions MBIqI2 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question2 here", 2);
+        this.addQuestions(MBIqI2);
         SurveyQuestions MBIqI3 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question3 here", 2);
+        this.addQuestions(MBIqI3);
 
         SurveyQuestions MBIqE1 = new SurveyQuestions("Maladaptive Behavior Index", "Externalizing", "", "question1 here", 2);
+        this.addQuestions(MBIqE1);
 
         SurveyQuestions MBIqO1 = new SurveyQuestions("Maladaptive Behavior Index", "Other", "", "question1 here", 1);
+        this.addQuestions(MBIqO1);
 
         SurveyQuestions MBIqC1 = new SurveyQuestions("Maladaptive Behavior Index", "Critical Items", "", "question1 here", 2);
-
+        this.addQuestions(MBIqC1);
 
         ////// Communication
         SurveyQuestions CDqR1 = new SurveyQuestions("Communication Domain", "Receptive", "", "question1 here", 1);
+        this.addQuestions(CDqR1);
         SurveyQuestions CDqR2 = new SurveyQuestions("Communication Domain", "Receptive", "", "question2 here", 1);
+        this.addQuestions(CDqR2);
 
         SurveyQuestions CDqE1 = new SurveyQuestions("Communication Domain", "Expressive", "", "question1 here", 1);
+        this.addQuestions(CDqE1);
 
         SurveyQuestions CDqW1 = new SurveyQuestions("Communication Domain", "Written", "", "question1 here", 1);
-
+        this.addQuestions(CDqW1);
 
         ////// Daily Living Skills
 
@@ -79,6 +90,16 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
         SurveyQuestions MSqF1 = new SurveyQuestions("Motor Skills", "Fine", "", "question1 here", 1);
 
         SurveyQuestions CDqG1 = new SurveyQuestions("Motor Skills", "Gross", "", "question1 here", 1);
+    }
+
+    public void addQuestions(SurveyQuestions q) {
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_CATEGORY, q.getCategory());
+        values.put(COLUMN_SUBCATEGORY, q.getSubCategory());
+        values.put(COLUMN_SUBSUBCATEGORY, q.getSubSubCategory());
+        values.put(COLUMN_QUESTION, q.getQuestion());
+        //Get the value?
+        dbase.insert(TABLE_STRUGGLEINFO, null, values);
     }
 
 
@@ -96,9 +117,7 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
             }
         }
 
-        SQLiteDatabase db = getWritableDatabase();
-        db.insert(TABLE_STRUGGLEINFO, null, values);
-        db.close();
+        dbase.insert(TABLE_STRUGGLEINFO, null, values);
     }
 
 
@@ -118,10 +137,6 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
         db.close();
         return FN;
     }
-
-
-
-
 
 
     //Prints each row from the database
