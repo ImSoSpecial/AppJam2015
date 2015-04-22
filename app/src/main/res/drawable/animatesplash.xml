@@ -1,0 +1,18 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selected" android:oneshot="false">
+    <item android:drawable="@drawable/image1big" android:duration="100" />
+    <item android:drawable="@drawable/image2big" android:duration="100" />
+    <item android:drawable="@drawable/image3big" android:duration="100" />
+    <item android:drawable="@drawable/image4big" android:duration="100" />
+    <item android:drawable="@drawable/image5big" android:duration="100" />
+    <item android:drawable="@drawable/image6big" android:duration="100" />
+    <item android:drawable="@drawable/image7big" android:duration="100" />
+    <item android:drawable="@drawable/image8big" android:duration="100" />
+    <item android:drawable="@drawable/image9big" android:duration="100" />
+    <item android:drawable="@drawable/image10big" android:duration="100" />
+    <item android:drawable="@drawable/image11big" android:duration="100" />
+    <item android:drawable="@drawable/image12big" android:duration="100" />
+    <item android:drawable="@drawable/image13big" android:duration="100" />
+    <item android:drawable="@drawable/image14big" android:duration="100" />
+    <item android:drawable="@drawable/image15big" android:duration="100" />
+</animation-list>
