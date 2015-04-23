@@ -35,4 +35,5 @@
     <string name="title_activity_end_task">EndTask</string>
     <string name="title_activity_results_screen">ResultsScreen</string>
     <string name="title_activity_task_instruction">TaskInstructions</string>
+    <string name="title_activity_about_screen">AboutScreen</string>
 </resources>
