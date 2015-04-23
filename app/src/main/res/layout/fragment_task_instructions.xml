@@ -43,27 +43,120 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="50sp" />
 
-    <ImageView
-        android:id="@+id/TIimage"
-        android:layout_width="200sp"
-        android:layout_height="200sp"
-        android:layout_below="@+id/TITitleLabel"
-        android:layout_centerHorizontal="true"
-        android:padding="20sp"
-        android:src="@drawable/cashier" />
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/TILinearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/TITitleLabel">
+
+        <HorizontalScrollView
+            android:id="@+id/TIHSV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/TILinearLayout2"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/TIimage"
+                    android:layout_width="300sp"
+                    android:layout_height="200sp"
+                    android:layout_centerHorizontal="true"
+                    android:padding="20sp"
+                    android:src="@drawable/cashier"/>
+
+                <ImageView
+                    android:id="@+id/TIimage2"
+                    android:layout_width="300sp"
+                    android:layout_height="200sp"
+                    android:layout_centerHorizontal="true"
+                    android:padding="20sp"
+                    android:src="@drawable/cashier"/>
+
+                <ImageView
+                    android:id="@+id/TIimage3"
+                    android:layout_width="300sp"
+                    android:layout_height="200sp"
+                    android:layout_centerHorizontal="true"
+                    android:padding="20sp"
+                    android:src="@drawable/cashier"/>
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+        <ScrollView
+            android:id="@+id/TIScrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="170sp">
+
+            <LinearLayout
+                android:id="@+id/TILinearLayout3"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:text="\n1.Description #1\n"
+                    android:layout_centerHorizontal="true"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textIsSelectable="true"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:text="2. Description #2\n"
+                    android:layout_centerHorizontal="true"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textIsSelectable="true"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:text="3. Description #3"
+                    android:layout_centerHorizontal="true"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textIsSelectable="true"
+                    android:textSize="40sp" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <!--<TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/TIimage"
+        android:layout_above="@+id/TINextButton"
         android:text="This is where the text description goes"
         android:layout_centerHorizontal="true"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textIsSelectable="true"
-        android:textSize="40sp" />
+        android:textSize="40sp" />-->
 
 
 </RelativeLayout>
