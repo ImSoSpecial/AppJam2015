@@ -11,8 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Activities"
-        android:textSize="50sp">
-    </TextView>
+        android:textSize="50sp"></TextView>
 
     <ListView
         android:layout_width="match_parent"
@@ -21,8 +20,7 @@
         android:id="@+id/listView"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/button"
-        android:drawSelectorOnTop="false">
-    </ListView>
+        android:drawSelectorOnTop="false"></ListView>
 
 
     <Button
@@ -43,6 +41,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:onClick="onFinishClicked"/>
+        android:onClick="onFinishClicked" />
 
 </RelativeLayout>

@@ -35,5 +35,11 @@
     <string name="title_activity_end_task">EndTask</string>
     <string name="title_activity_results_screen">ResultsScreen</string>
     <string name="title_activity_task_instruction">TaskInstructions</string>
+
     <string name="title_activity_records_screen">RecordsScreen</string>
+
+    <string name="title_activity_struggle_question_screen">StruggleQuestionScreen</string>
+
+    <string name="hello_world">Hello world!</string>
+
 </resources>

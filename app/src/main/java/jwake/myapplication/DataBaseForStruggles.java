@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by adrianvazquez on 4/19/15.
  */
@@ -20,6 +23,7 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
     public static final String COLUMN_SUBCATEGORY = "subCategory";
     public static final String COLUMN_SUBSUBCATEGORY = "subSubCategory";
     public static final String COLUMN_QUESTION = "question";
+    public static final String COLUMN_WORTH = "worth";
     public static final String COLUMN_TASK = "task";
 
     private static final String TAG = "DBManagerMessage";
@@ -37,7 +41,8 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
                 COLUMN_CATEGORY + " TEXT," +
                 COLUMN_SUBCATEGORY + " TEXT," +
                 COLUMN_SUBSUBCATEGORY + " TEXT," +
-                COLUMN_TASK + " TEXT," +
+                COLUMN_QUESTION + " TEXT," +
+                COLUMN_WORTH + " TEXT " +
                 ");";
         db.execSQL(query);
         addQuestions();
@@ -52,32 +57,51 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
 
     public void addQuestions() {
         ////// Maladaptive Behavior
-        SurveyQuestions MBIqI1 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question1 here", 1);
+        SurveyQuestions MBIqI1 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "Is overly dependent, clings on to people", "1");
         this.addQuestions(MBIqI1);
-        SurveyQuestions MBIqI2 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question2 here", 2);
+        SurveyQuestions MBIqI2 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "Avoids others, prefers to be alone", "2");
         this.addQuestions(MBIqI2);
-        SurveyQuestions MBIqI3 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "question3 here", 2);
+        SurveyQuestions MBIqI3 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "Is overly anxious, nervous", "2");
         this.addQuestions(MBIqI3);
+        SurveyQuestions MBIqI4 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "Cries or laughs too easily", "1");
+        this.addQuestions(MBIqI4);
+        SurveyQuestions MBIqI5 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "Has poor eye contact", "2");
+        this.addQuestions(MBIqI5);
+        SurveyQuestions MBIqI6 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "Is sad for no clear reason", "2");
+        this.addQuestions(MBIqI6);
+        SurveyQuestions MBIqI7 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "Avoids social interaction", "2");
+        this.addQuestions(MBIqI7);
+        SurveyQuestions MBIqI8 = new SurveyQuestions("Maladaptive Behavior Index", "Internalizing", "", "Lacks energy", "2");
+        this.addQuestions(MBIqI8);
 
-        SurveyQuestions MBIqE1 = new SurveyQuestions("Maladaptive Behavior Index", "Externalizing", "", "question1 here", 2);
+
+
+        SurveyQuestions MBIqE1 = new SurveyQuestions("Maladaptive Behavior Index", "Externalizing", "", "Is impulsive and acts without thinking", "2");
         this.addQuestions(MBIqE1);
+        SurveyQuestions MBIqE2 = new SurveyQuestions("Maladaptive Behavior Index", "Externalizing", "", "Has temper tantrums", "2");
+        this.addQuestions(MBIqE2);
+        SurveyQuestions MBIqE3 = new SurveyQuestions("Maladaptive Behavior Index", "Externalizing", "", "Intentionally disobeys and defies those in authority", "2");
+        this.addQuestions(MBIqE3);
 
-        SurveyQuestions MBIqO1 = new SurveyQuestions("Maladaptive Behavior Index", "Other", "", "question1 here", 1);
+
+
+
+        SurveyQuestions MBIqO1 = new SurveyQuestions("Maladaptive Behavior Index", "Other", "", "question1 here", "1");
         this.addQuestions(MBIqO1);
 
-        SurveyQuestions MBIqC1 = new SurveyQuestions("Maladaptive Behavior Index", "Critical Items", "", "question1 here", 2);
+        SurveyQuestions MBIqC1 = new SurveyQuestions("Maladaptive Behavior Index", "Critical Items", "", "question1 here", "2");
         this.addQuestions(MBIqC1);
 
         ////// Communication
-        SurveyQuestions CDqR1 = new SurveyQuestions("Communication Domain", "Receptive", "", "question1 here", 1);
+        SurveyQuestions CDqR1 = new SurveyQuestions("Communication Domain", "Receptive", "", "question1 here", "1");
         this.addQuestions(CDqR1);
-        SurveyQuestions CDqR2 = new SurveyQuestions("Communication Domain", "Receptive", "", "question2 here", 1);
+        SurveyQuestions CDqR2 = new SurveyQuestions("Communication Domain", "Receptive", "", "question2 here", "1");
         this.addQuestions(CDqR2);
 
-        SurveyQuestions CDqE1 = new SurveyQuestions("Communication Domain", "Expressive", "", "question1 here", 1);
+        SurveyQuestions CDqE1 = new SurveyQuestions("Communication Domain", "Expressive", "", "question1 here", "1");
         this.addQuestions(CDqE1);
 
-        SurveyQuestions CDqW1 = new SurveyQuestions("Communication Domain", "Written", "", "question1 here", 1);
+        SurveyQuestions CDqW1 = new SurveyQuestions("Communication Domain", "Written", "", "question1 here", "1");
         this.addQuestions(CDqW1);
 
         ////// Daily Living Skills
@@ -87,9 +111,9 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
 
 
         ////// Motor Skills
-        SurveyQuestions MSqF1 = new SurveyQuestions("Motor Skills", "Fine", "", "question1 here", 1);
+        SurveyQuestions MSqF1 = new SurveyQuestions("Motor Skills", "Fine", "", "question1 here", "1");
 
-        SurveyQuestions CDqG1 = new SurveyQuestions("Motor Skills", "Gross", "", "question1 here", 1);
+        SurveyQuestions CDqG1 = new SurveyQuestions("Motor Skills", "Gross", "", "question1 here", "1");
     }
 
     public void addQuestions(SurveyQuestions q) {
@@ -98,29 +122,61 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
         values.put(COLUMN_SUBCATEGORY, q.getSubCategory());
         values.put(COLUMN_SUBSUBCATEGORY, q.getSubSubCategory());
         values.put(COLUMN_QUESTION, q.getQuestion());
+        values.put(COLUMN_WORTH, q.getAnswer());
         //Get the value?
         dbase.insert(TABLE_STRUGGLEINFO, null, values);
     }
 
+    public List<SurveyQuestions> getAllQuestions() {
+        List<SurveyQuestions> surQuest = new ArrayList<SurveyQuestions>();
 
-    public void addInfo(String[] category, String[][] subCategory) {
+        //select all query
+        String selectQuery = "SELECT * FROM " + TABLE_STRUGGLEINFO;
+        dbase = this.getReadableDatabase();
+        Cursor cursor = dbase.rawQuery(selectQuery, null);
 
-        ContentValues values = new ContentValues();
-        for(int i = 0; i < category.length; i++) {
-            values.put(COLUMN_CATEGORY, category[i]);
+        if(cursor.moveToFirst()) {
+            do {
+                SurveyQuestions quest = new SurveyQuestions();
+                quest.setID(cursor.getInt(0));
+                quest.setCategory(cursor.getString(1));
+                quest.setSubCategory(cursor.getString(2));
+                quest.setSubSubCategory(cursor.getString(3));
+                quest.setQuestion(cursor.getString(4));
+                quest.setAnswer(cursor.getString(5));
+                surQuest.add(quest);
+            } while (cursor.moveToNext());
         }
 
-        for(int j = 0; j < subCategory.length; j++) {
-            values.put(COLUMN_SUBCATEGORY, subCategory[j][0]);
-            for(int k = 0; k < subCategory[j].length; k++) {
-                values.put(COLUMN_SUBSUBCATEGORY, subCategory[j][k+1]);
-            }
-        }
-
-        dbase.insert(TABLE_STRUGGLEINFO, null, values);
+        return surQuest;
     }
 
 
+    public ArrayList<SurveyQuestions> getAllQuestionsArray() {
+        ArrayList<SurveyQuestions> surQuest = new ArrayList<SurveyQuestions>();
+
+        //select all query
+        String selectQuery = "SELECT * FROM " + TABLE_STRUGGLEINFO;
+        dbase = this.getReadableDatabase();
+        Cursor cursor = dbase.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            do {
+                SurveyQuestions quest = new SurveyQuestions();
+                quest.setID(cursor.getInt(0));
+                quest.setCategory(cursor.getString(1));
+                quest.setSubCategory(cursor.getString(2));
+                quest.setSubSubCategory(cursor.getString(3));
+                quest.setQuestion(cursor.getString(4));
+                quest.setAnswer(cursor.getString(5));
+                surQuest.add(quest);
+            } while (cursor.moveToNext());
+        }
+
+        return surQuest;
+    }
+
+    //May not be needed
     public String printSubCategory(String CAT) {
         String FN = "";
         SQLiteDatabase db = getWritableDatabase();

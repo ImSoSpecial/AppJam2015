@@ -1,4 +1,3 @@
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/TI_fragment_page"
@@ -65,7 +64,6 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textIsSelectable="true"
         android:textSize="40sp" />
-
 
 
 </RelativeLayout>

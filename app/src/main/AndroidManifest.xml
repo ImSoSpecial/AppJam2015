@@ -4,6 +4,7 @@
 
     <application
         android:allowBackup="true"
+        android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
@@ -53,8 +54,15 @@
             android:screenOrientation="sensorPortrait" >
         </activity>
         <activity
+
             android:name=".RecordsScreen"
             android:label="@string/title_activity_records_screen" >
+        </activity>
+        <activity
+
+            android:name=".StruggleQuestionScreen"
+            android:label="@string/title_activity_struggle_question_screen" >
+
         </activity>
     </application>
 
