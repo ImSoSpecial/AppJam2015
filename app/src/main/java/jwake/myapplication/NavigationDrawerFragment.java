@@ -1,7 +1,9 @@
 package jwake.myapplication;
 
+<<<<<<< HEAD
 import android.content.Intent;
-import android.graphics.Color;
+=======
+>>>>>>> origin/master
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -112,7 +114,6 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.title_section6),
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
-
         return mDrawerListView;
     }
 
@@ -177,11 +178,11 @@ public class NavigationDrawerFragment extends Fragment {
             }
         };
 
-        /*// If the user hasn't 'learned' about the drawer, open it to introduce them to the drawer,
+        // If the user hasn't 'learned' about the drawer, open it to introduce them to the drawer,
         // per the navigation drawer design guidelines.
         if (!mUserLearnedDrawer && !mFromSavedInstanceState) {
             mDrawerLayout.openDrawer(mFragmentContainerView);
-        }*/
+        }
 
         // Defer code dependent on restoration of previous instance state.
         mDrawerLayout.post(new Runnable() {
@@ -196,10 +197,17 @@ public class NavigationDrawerFragment extends Fragment {
 
     private void selectItem(int position) {
         mCurrentSelectedPosition = position;
+<<<<<<< HEAD
         if(mCurrentSelectedPosition == 2 && !getActivity().getTitle().equals("HomeScreen")){
             Intent intent = new Intent(getActivity(), HomeScreen.class);
             startActivity(intent);
         }
+        if(mCurrentSelectedPosition == 3 && !getActivity().getTitle().equals("AboutScreen")){
+            Intent intent = new Intent(getActivity(), AboutScreen.class);
+            startActivity(intent);
+        }
+=======
+>>>>>>> origin/master
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);
         }
@@ -257,12 +265,11 @@ public class NavigationDrawerFragment extends Fragment {
             return true;
         }
 
-        /*
         if (item.getItemId() == R.id.action_example) {
             Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
             return true;
         }
-        */
+
         return super.onOptionsItemSelected(item);
     }
 
