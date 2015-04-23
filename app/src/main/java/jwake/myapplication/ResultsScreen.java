@@ -2,6 +2,7 @@ package jwake.myapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -20,6 +21,8 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GridLabelRenderer;
+import com.jjoe64.graphview.Viewport;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
@@ -148,13 +151,27 @@ public class ResultsScreen extends ActionBarActivity
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_results_screen, container, false);
             GraphView graph = (GraphView) rootView.findViewById(R.id.graph);
+            GridLabelRenderer g = graph.getGridLabelRenderer();
+            Viewport v = graph.getViewport();
+            graph.setTitle("Score History");
+            g.setVerticalAxisTitle("Score");
+            g.setHorizontalAxisTitle("Attempts");
             LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
-                    new DataPoint(0, 1),
-                    new DataPoint(1, 5),
-                    new DataPoint(2, 3),
+                    new DataPoint(0, 0),
+                    new DataPoint(1, 1),
+                    new DataPoint(2, 2),
                     new DataPoint(3, 2),
-                    new DataPoint(4, 6)
+                    new DataPoint(4, 4),
+                    new DataPoint(5, 5)
             });
+            series.setColor(Color.RED);
+            g.setNumVerticalLabels(6);
+            g.setNumHorizontalLabels((int)series.getHighestValueX()+2);
+            v.setScrollable(true);
+            v.setXAxisBoundsManual(true);
+            v.setYAxisBoundsManual(true);
+            v.setMaxX(series.getHighestValueX()+1);
+            v.setMaxY(5);
             graph.addSeries(series);
 
             return rootView;
