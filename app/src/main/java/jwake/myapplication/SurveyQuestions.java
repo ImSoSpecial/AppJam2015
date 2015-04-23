@@ -24,7 +24,7 @@ public class SurveyQuestions {
     private String Category;
     private String SubCategory;
     private String SubSubCategory;
-    private int Answer;     //value of the response they chose
+    private String Answer;     //value of the response they chose
     private int Sum;
 
     public SurveyQuestions() {
@@ -33,11 +33,11 @@ public class SurveyQuestions {
         SubCategory = "";
         SubSubCategory = "";
         Question = "";
-        Answer = 0;
+        Answer = "";
         Sum = 0;
     }
 
-    public SurveyQuestions(String c, String sc, String ssc, String q, int a) {
+    public SurveyQuestions(String c, String sc, String ssc, String q, String a) {
         Category = c;
         SubCategory = sc;
         SubSubCategory = ssc;
@@ -70,7 +70,7 @@ public class SurveyQuestions {
         return SubSubCategory;
     }
 
-    public int getAnswer() {
+    public String getAnswer() {
         return Answer;
     }
 
@@ -95,7 +95,7 @@ public class SurveyQuestions {
         SubSubCategory = subSubCategory;
     }
 
-    public void setAnswer(int answer) {
+    public void setAnswer(String answer) {
         Answer = answer;
     }
 

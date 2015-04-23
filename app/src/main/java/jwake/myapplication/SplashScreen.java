@@ -42,10 +42,9 @@ public class SplashScreen extends Activity {
                     i = new Intent(SplashScreen.this, IntroScreen.class);
                 }
                 startActivity(i);
-                //finish();
+                finish();
 
             }
         }, 3000);
     }
-
 }

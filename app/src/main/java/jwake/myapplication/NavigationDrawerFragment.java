@@ -1,6 +1,9 @@
 package jwake.myapplication;
 
+<<<<<<< HEAD
 import android.content.Intent;
+=======
+>>>>>>> origin/master
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -194,6 +197,7 @@ public class NavigationDrawerFragment extends Fragment {
 
     private void selectItem(int position) {
         mCurrentSelectedPosition = position;
+<<<<<<< HEAD
         if(mCurrentSelectedPosition == 2 && !getActivity().getTitle().equals("HomeScreen")){
             Intent intent = new Intent(getActivity(), HomeScreen.class);
             startActivity(intent);
@@ -202,6 +206,8 @@ public class NavigationDrawerFragment extends Fragment {
             Intent intent = new Intent(getActivity(), AboutScreen.class);
             startActivity(intent);
         }
+=======
+>>>>>>> origin/master
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);
         }

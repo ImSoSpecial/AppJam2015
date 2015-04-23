@@ -53,8 +53,20 @@
             android:screenOrientation="sensorPortrait" >
         </activity>
         <activity
+<<<<<<< HEAD
             android:name=".AboutScreen"
             android:label="@string/title_activity_about_screen" >
+=======
+
+            android:name=".RecordsScreen"
+            android:label="@string/title_activity_records_screen" >
+        </activity>
+        <activity
+
+            android:name=".StruggleQuestionScreen"
+            android:label="@string/title_activity_struggle_question_screen" >
+
+>>>>>>> origin/master
         </activity>
     </application>
 
