@@ -1,8 +1,6 @@
 package jwake.myapplication;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -21,7 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 
-public class HomeScreen extends ActionBarActivity
+public class RecordsScreen extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     /**
@@ -37,35 +35,17 @@ public class HomeScreen extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_screen);
-
-        SharedPreferences preferences = getSharedPreferences("parentName",Context.MODE_PRIVATE);
+        setContentView(R.layout.activity_records_screen);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = "Welcome, "+ preferences.getString("parentName", "user");
+        mTitle = getTitle();
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
     }
-
-    public void onActivityClicked(View view) {
-        Intent intent = new Intent(this, activity_screen.class);
-        startActivity(intent);
-    }
-
-    public void onRecordsClicked(View view) {
-        Intent intent = new Intent(this, RecordsScreen.class);
-        startActivity(intent);
-    }
-
-
-
-
-
-
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
@@ -77,7 +57,6 @@ public class HomeScreen extends ActionBarActivity
     }
 
     public void onSectionAttached(int number) {
-        /*
         switch (number) {
             case 1:
                 mTitle = getString(R.string.title_section1);
@@ -89,7 +68,6 @@ public class HomeScreen extends ActionBarActivity
                 mTitle = getString(R.string.title_section3);
                 break;
         }
-        */
     }
 
     public void restoreActionBar() {
@@ -106,13 +84,12 @@ public class HomeScreen extends ActionBarActivity
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
-            getMenuInflater().inflate(R.menu.home_screen, menu);
+            getMenuInflater().inflate(R.menu.records_screen, menu);
             restoreActionBar();
             return true;
         }
         return super.onCreateOptionsMenu(menu);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -128,7 +105,6 @@ public class HomeScreen extends ActionBarActivity
 
         return super.onOptionsItemSelected(item);
     }
-
 
     /**
      * A placeholder fragment containing a simple view.
@@ -158,14 +134,14 @@ public class HomeScreen extends ActionBarActivity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_home_screen, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_records_screen, container, false);
             return rootView;
         }
 
         @Override
         public void onAttach(Activity activity) {
             super.onAttach(activity);
-            ((HomeScreen) activity).onSectionAttached(
+            ((RecordsScreen) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }
