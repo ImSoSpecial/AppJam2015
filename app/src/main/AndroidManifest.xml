@@ -24,11 +24,6 @@
             android:label="@string/title_activity_home_screen" >
         </activity>
         <activity
-            android:name=".IntroScreen"
-            android:label="@string/title_activity_intro_screen"
-            android:screenOrientation="sensorPortrait" >
-        </activity>
-        <activity
             android:name=".MakeAccount"
             android:label="@string/title_activity_make_account" >
         </activity>
@@ -53,20 +48,16 @@
             android:screenOrientation="sensorPortrait" >
         </activity>
         <activity
-<<<<<<< HEAD
             android:name=".AboutScreen"
             android:label="@string/title_activity_about_screen" >
-=======
-
+        </activity>
+        <activity
             android:name=".RecordsScreen"
             android:label="@string/title_activity_records_screen" >
         </activity>
         <activity
-
             android:name=".StruggleQuestionScreen"
             android:label="@string/title_activity_struggle_question_screen" >
-
->>>>>>> origin/master
         </activity>
         <activity
             android:name=".IntroductionScreen"

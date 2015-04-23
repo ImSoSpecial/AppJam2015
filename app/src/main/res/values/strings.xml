@@ -16,7 +16,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_example">Example action</string>
-    <string name="title_activity_intro_screen">IntroScreen</string>
     <string name="introparagraph">
         Hello, I am your sidekick! My goal is to serve as a guide for parents to teach their
         children to become independent! Autistic children are often ill-prepared to take care of
@@ -45,6 +44,4 @@
     <string name="title_activity_introduction_screen">IntroductionScreen</string>
 
 
-
->>>>>>> 4319de045611a22b465ade3b2ce953bf055f5173
 </resources>
