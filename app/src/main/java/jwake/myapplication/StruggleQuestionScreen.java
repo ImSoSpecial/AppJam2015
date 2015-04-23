@@ -1,9 +1,11 @@
 package jwake.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -40,6 +42,16 @@ public class StruggleQuestionScreen extends ActionBarActivity {
 
     }
 
+    public void onNextStruggleClicked(View view) {
+
+
+
+    }
+
+    public void onSkipStruggleClicked(View view) {
+        Intent intent = new Intent(this, HomeScreen.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

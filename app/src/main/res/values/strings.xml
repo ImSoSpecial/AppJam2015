@@ -33,15 +33,9 @@
     <string name="title_activity_task_instruction">TaskInstructions</string>
 
     <string name="title_activity_about_screen">AboutScreen</string>
-
-
     <string name="title_activity_records_screen">RecordsScreen</string>
-
     <string name="title_activity_struggle_question_screen">StruggleQuestionScreen</string>
-
-    <string name="hello_world">Hello world!</string>
-
-    <string name="title_activity_introduction_screen">IntroductionScreen</string>
+    <string name="title_activity_introduction_screen">Welcome!</string>
 
 
 </resources>
