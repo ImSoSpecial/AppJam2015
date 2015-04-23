@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context="jwake.myapplication.StruggleQuestionScreen">
+
+    <ListView
+        android:id="@+id/StruggleList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:drawSelectorOnTop="false"
+        android:layout_weight="5"></ListView>
+
+    <RelativeLayout
+        android:layout_below="@+id/StruggleList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/SkipButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="skip"
+            android:background="@drawable/custom_button"
+            android:onClick="onSkipStruggleClicked"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/NextButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="next"
+            android:background="@drawable/custom_button"
+            android:onClick="onNextStruggleClicked"
+            android:layout_weight="1"/>
+
+    </RelativeLayout>
+</LinearLayout>

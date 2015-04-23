@@ -138,25 +138,25 @@
                     android:layout_below="@+id/ChildAgeEdit"
                     android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/CMaleGenderRadioButton"
-                    android:layout_below="@+id/ChildAgeEdit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Male" />
+                    <RadioButton
+                        android:id="@+id/CMaleGenderRadioButton"
+                        android:layout_below="@+id/ChildAgeEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Male" />
 
-                <RadioButton
-                    android:id="@+id/CFemaleGenderRadioButton"
-                    android:layout_below="@+id/ChildAgeEdit"
-                    android:layout_toRightOf="@+id/CMaleGenderRadioButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="50dp"
-                    android:text="Female" />
+                    <RadioButton
+                        android:id="@+id/CFemaleGenderRadioButton"
+                        android:layout_below="@+id/ChildAgeEdit"
+                        android:layout_toRightOf="@+id/CMaleGenderRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="50dp"
+                        android:text="Female" />
                 </RadioGroup>
 
             </RelativeLayout>

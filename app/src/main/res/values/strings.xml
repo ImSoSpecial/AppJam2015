@@ -16,23 +16,26 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_example">Example action</string>
-    <string name="title_activity_intro_screen">IntroScreen</string>
     <string name="introparagraph">
-        Hello friends, welcyum 2 our app!11 Just kidding. \n
-        Hello there! Welcome for to our app. \n
-        Right now our team consists of \n
-            \tAdrian Vazquez \n
-            \tEfrain Coyt\n
-            \tKevin Pham\n
-            \tJonathan Mak\n
-            \tWilliam Yang\n
-        No, this is not actually our introduction.
-
-
+        Hello, I am your sidekick! My goal is to serve as a guide for parents to teach their
+        children to become independent! Autistic children are often ill-prepared to take care of
+        themselves by the time they finish their education and come of age. Their education usually
+        does not provide them with many important daily skills that your child will need to take
+        care of himself and participate as a member of society. Together, we can better prepare your
+        child to become an independent individual who can take on the world. I will provide you with
+        a guide on what needs to be improved while you supervise your child’s training process and
+        monitor his improvement. The earlier we start, the better!
     </string>
     <string name="title_activity_make_account">MakeAccount</string>
     <string name="title_activity_activity_screen">activity_screen</string>
     <string name="title_activity_end_task">EndTask</string>
     <string name="title_activity_results_screen">ResultsScreen</string>
     <string name="title_activity_task_instruction">TaskInstructions</string>
+
+    <string name="title_activity_about_screen">AboutScreen</string>
+    <string name="title_activity_records_screen">RecordsScreen</string>
+    <string name="title_activity_struggle_question_screen">StruggleQuestionScreen</string>
+    <string name="title_activity_introduction_screen">Welcome!</string>
+
+
 </resources>

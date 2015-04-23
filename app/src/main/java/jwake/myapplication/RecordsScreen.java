@@ -1,7 +1,6 @@
 package jwake.myapplication;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -20,26 +19,23 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 
-public class IntroScreen extends ActionBarActivity
+public class RecordsScreen extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
-    //DataBaseForStruggles dbManager;
+    /**
+     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
+     */
     private NavigationDrawerFragment mNavigationDrawerFragment;
+
+    /**
+     * Used to store the last screen title. For use in {@link #restoreActionBar()}.
+     */
     private CharSequence mTitle;
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro_screen);
-
-        //dbManager = new DataBaseForStruggles(this, null, null, 1);
-        //dbManager.addInfo();
-
-
+        setContentView(R.layout.activity_records_screen);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -49,11 +45,6 @@ public class IntroScreen extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
-    }
-
-    public void onNextClick(View view){
-        Intent i = new Intent(this, MakeAccount.class);
-        startActivity(i);
     }
 
     @Override
@@ -93,7 +84,7 @@ public class IntroScreen extends ActionBarActivity
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
-            getMenuInflater().inflate(R.menu.intro_screen, menu);
+            getMenuInflater().inflate(R.menu.records_screen, menu);
             restoreActionBar();
             return true;
         }
@@ -143,14 +134,14 @@ public class IntroScreen extends ActionBarActivity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_intro_screen, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_records_screen, container, false);
             return rootView;
         }
 
         @Override
         public void onAttach(Activity activity) {
             super.onAttach(activity);
-            ((IntroScreen) activity).onSectionAttached(
+            ((RecordsScreen) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }

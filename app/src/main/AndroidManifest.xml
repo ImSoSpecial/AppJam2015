@@ -6,6 +6,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:theme="@style/Theme.Jmaketheme" >
         <activity
             android:name=".SplashScreen"
@@ -23,33 +24,44 @@
             android:label="@string/title_activity_home_screen" >
         </activity>
         <activity
-            android:name=".IntroScreen"
-            android:screenOrientation="sensorPortrait"
-            android:label="@string/title_activity_intro_screen" >
-        </activity>
-        <activity
             android:name=".MakeAccount"
             android:label="@string/title_activity_make_account" >
         </activity>
         <activity
             android:name=".activity_screen"
-            android:screenOrientation="sensorPortrait"
-            android:label="@string/title_activity_activity_screen" >
+            android:label="@string/title_activity_activity_screen"
+            android:screenOrientation="sensorPortrait" >
         </activity>
         <activity
             android:name=".EndTask"
-            android:screenOrientation="sensorPortrait"
-            android:label="@string/title_activity_end_task" >
+            android:label="@string/title_activity_end_task"
+            android:screenOrientation="sensorPortrait" >
         </activity>
         <activity
             android:name=".TaskInstructions"
-            android:screenOrientation="sensorPortrait"
-            android:label="@string/title_activity_task_instruction" >
+            android:label="@string/title_activity_task_instruction"
+            android:screenOrientation="sensorPortrait" >
         </activity>
         <activity
             android:name=".ResultsScreen"
-            android:screenOrientation="sensorPortrait"
-            android:label="@string/title_activity_results_screen" >
+            android:label="@string/title_activity_results_screen"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name=".AboutScreen"
+            android:label="@string/title_activity_about_screen" >
+        </activity>
+        <activity
+            android:name=".RecordsScreen"
+            android:label="@string/title_activity_records_screen" >
+        </activity>
+        <activity
+            android:name=".StruggleQuestionScreen"
+            android:label="@string/title_activity_struggle_question_screen" >
+        </activity>
+        <activity
+            android:name=".IntroductionScreen"
+            android:label="@string/title_activity_introduction_screen" >
         </activity>
     </application>
 
