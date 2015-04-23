@@ -18,6 +18,7 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "struggles.db";
     public static final String TABLE_STRUGGLEINFO = "struggleInfo";
+    public static final String TABLE_TASKINFO = "taskInfo";
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_CATEGORY = "category";
     public static final String COLUMN_SUBCATEGORY = "subCategory";
@@ -25,6 +26,23 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
     public static final String COLUMN_QUESTION = "question";
     public static final String COLUMN_WORTH = "worth";
     public static final String COLUMN_TASK = "task";
+    public static final String COLUMN_IMAGE_PATH = "imagePath";
+
+
+    private static final String CREATE_TABLE_STRUGGLEINFO = "CREATE TABLE " + TABLE_STRUGGLEINFO + "(" +
+            COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            COLUMN_CATEGORY + " TEXT," +
+            COLUMN_SUBCATEGORY + " TEXT," +
+            COLUMN_SUBSUBCATEGORY + " TEXT," +
+            COLUMN_QUESTION + " TEXT," +
+            COLUMN_WORTH + " TEXT " +
+            ");";
+
+    private static final String CREATE_TABLE_TASKINFO = "CREATE TABLE " + TABLE_TASKINFO + "(" +
+            COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            COLUMN_TASK + " TEXT," +
+            COLUMN_IMAGE_PATH + " TEXT " +
+            ");";
 
     private static final String TAG = "DBManagerMessage";
     private SQLiteDatabase dbase;
@@ -36,22 +54,32 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         dbase = db;
-        String query = "CREATE TABLE " + TABLE_STRUGGLEINFO + "(" +
-                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                COLUMN_CATEGORY + " TEXT," +
-                COLUMN_SUBCATEGORY + " TEXT," +
-                COLUMN_SUBSUBCATEGORY + " TEXT," +
-                COLUMN_QUESTION + " TEXT," +
-                COLUMN_WORTH + " TEXT " +
-                ");";
-        db.execSQL(query);
+        db.execSQL(CREATE_TABLE_STRUGGLEINFO);
         addQuestions();
+        db.execSQL(CREATE_TABLE_TASKINFO);
+        addTasks();
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_STRUGGLEINFO);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_TASKINFO);
         onCreate(db);
+    }
+
+
+    private void addTasks() {
+        Tasks something1 = new Tasks("Task Description step 1", "imagePath1");
+        this.addTasks(something1);
+        Tasks something2 = new Tasks("Task Description step 2", "imagePath2");
+        this.addTasks(something2);
+    }
+
+    private void addTasks(Tasks t) {
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_TASK, t.getTask());
+        values.put(COLUMN_IMAGE_PATH, t.getImage_Path());
+        dbase.insert(TABLE_TASKINFO, null, values);
     }
 
 
