@@ -237,7 +237,7 @@ public class MakeAccount extends ActionBarActivity
             firstTimeEditor.putBoolean("introInfo", true);
 
             firstTimeEditor.apply();
-            Intent i = new Intent(this, HomeScreen.class);  //StruggleQuestionScreen
+            Intent i = new Intent(this, StruggleQuestionScreen.class);  //StruggleQuestionScreen
             startActivity(i);
         }
         else {

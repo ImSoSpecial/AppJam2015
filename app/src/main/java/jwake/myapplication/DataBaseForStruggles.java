@@ -105,15 +105,18 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
         this.addQuestions(CDqW1);
 
         ////// Daily Living Skills
-
+        SurveyQuestions DLSqW1 = new SurveyQuestions("Daily Living Skills", "", "", "question1 here", "1");
+        this.addQuestions(DLSqW1);
 
         ////// Socialization
-
+        SurveyQuestions SqW1 = new SurveyQuestions("Socialization", "", "", "question1 here", "1");
+        this.addQuestions(SqW1);
 
         ////// Motor Skills
         SurveyQuestions MSqF1 = new SurveyQuestions("Motor Skills", "Fine", "", "question1 here", "1");
-
-        SurveyQuestions CDqG1 = new SurveyQuestions("Motor Skills", "Gross", "", "question1 here", "1");
+        this.addQuestions(MSqF1);
+        SurveyQuestions MSqG1 = new SurveyQuestions("Motor Skills", "Gross", "", "question1 here", "1");
+        this.addQuestions(MSqG1);
     }
 
     public void addQuestions(SurveyQuestions q) {
