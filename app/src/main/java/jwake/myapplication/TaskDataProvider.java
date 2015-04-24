@@ -28,18 +28,25 @@ public class TaskDataProvider {
         bank.add("Case 2: Deposit cash");
         bank.add("Case 3: Withdraw cash");
         bank.add("Case 4: Get a new credit/debit card");
+        bank.add("Opening a new bank account");
+        bank.add("Closing a bank account");
 
         List<String> airport = new ArrayList<String>();
+        airport.add("Remember the essentials before leaving the house");
+        airport.add("Getting to the airport");
         airport.add("Purchasing a plane ticket");
-        airport.add("The Smurfs 2");
-        airport.add("The Spectacular Now");
-        airport.add("The Canyons");
-        airport.add("Europa Report");
+        airport.add("At the check-in gate");
+        airport.add("Security");
+        airport.add("Waiting at your gate");
+        airport.add("Boarding the plane");
 
         List<String> restaurant = new ArrayList<String>();
+        restaurant.add("Make a reservation ahead of time if necessary");
+        restaurant.add("Waiting for a table");
         restaurant.add("How to order");
+        restaurant.add("Properly eating our food");
         restaurant.add("Asking for the check");
-        restaurant.add("Making a reservation");
+        restaurant.add("How to politely make a complaint if needed");
 
 
         //all the tasks put together

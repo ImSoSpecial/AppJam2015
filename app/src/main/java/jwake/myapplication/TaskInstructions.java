@@ -177,7 +177,6 @@ public class TaskInstructions extends ActionBarActivity
                 }
             }
 
-
             ListAdapter listAdapter = new TaskCustomAdapter(getActivity(), sortedByTask);
             ListView listViewContainer = (ListView) rootView.findViewById(R.id.customList);
             listViewContainer.setAdapter(listAdapter);
