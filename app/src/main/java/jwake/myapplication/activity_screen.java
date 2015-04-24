@@ -44,11 +44,6 @@ public class activity_screen extends ActionBarActivity
      */
     private CharSequence mTitle;
 
-    List<String> listDataHeader;
-    HashMap<String, List<String>> listDataChild;
-    ExpandableListView expListView;
-    ExpandableListAdapter listAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,70 +57,7 @@ public class activity_screen extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
-/*
-        expListView = (ExpandableListView) findViewById(R.id.ActlistView);
-        listDataChild = TaskDataProvider.getInfo();
-        listDataHeader = new ArrayList<String>(listDataChild.keySet());
 
-        listAdapter = new ExpandableListAdapter(this, listDataChild, listDataHeader);
-
-        expListView.setAdapter(listAdapter);
-
-        //Listview Group click listener
-
-        expListView.setOnGroupClickListener(new OnGroupClickListener() {
-
-            @Override
-            public boolean onGroupClick(ExpandableListView parent, View v,
-                                        int groupPosition, long id) {
-                // Toast.makeText(getApplicationContext(),
-                // "Group Clicked " + listDataHeader.get(groupPosition),
-                // Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
-
-        // Listview Group expanded listener
-        expListView.setOnGroupExpandListener(new OnGroupExpandListener() {
-
-            @Override
-            public void onGroupExpand(int groupPosition) {
-                Toast.makeText(getApplicationContext(),
-                        listDataHeader.get(groupPosition) + " Expanded",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        // Listview Group collasped listener
-        expListView.setOnGroupCollapseListener(new OnGroupCollapseListener() {
-
-            @Override
-            public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getApplicationContext(),
-                        listDataHeader.get(groupPosition) + " Collapsed",
-                        Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        // Listview on child click listener
-        expListView.setOnChildClickListener(new OnChildClickListener() {
-
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v,
-                                        int groupPosition, int childPosition, long id) {
-                Toast.makeText(
-                        getApplicationContext(),
-                        listDataHeader.get(groupPosition)
-                                + " : "
-                                + listDataChild.get(
-                                listDataHeader.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT)
-                        .show();
-                return false;
-            }
-        });
-        */
     }
 
 
@@ -139,6 +71,7 @@ public class activity_screen extends ActionBarActivity
     }
 
     public void onSectionAttached(int number) {
+        /*
         switch (number) {
             case 1:
                 mTitle = getString(R.string.title_section1);
@@ -150,6 +83,7 @@ public class activity_screen extends ActionBarActivity
                 mTitle = getString(R.string.title_section3);
                 break;
         }
+        */
     }
 
     public void restoreActionBar() {
@@ -235,28 +169,16 @@ public class activity_screen extends ActionBarActivity
 
             expListView.setAdapter(listAdapter);
 
-            //Listview Group click listener
-
-            expListView.setOnGroupClickListener(new OnGroupClickListener() {
-
-                @Override
-                public boolean onGroupClick(ExpandableListView parent, View v,
-                                            int groupPosition, long id) {
-                     Toast.makeText(getActivity().getApplicationContext(),
-                     "Group Clicked " + listDataHeader.get(groupPosition),
-                     Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-            });
-
             // Listview Group expanded listener
             expListView.setOnGroupExpandListener(new OnGroupExpandListener() {
 
                 @Override
                 public void onGroupExpand(int groupPosition) {
+                    /*
                     Toast.makeText(getActivity().getApplicationContext(),
                             listDataHeader.get(groupPosition) + " Expanded",
                             Toast.LENGTH_SHORT).show();
+                    */
                 }
             });
 
@@ -265,10 +187,11 @@ public class activity_screen extends ActionBarActivity
 
                 @Override
                 public void onGroupCollapse(int groupPosition) {
+                    /*
                     Toast.makeText(getActivity().getApplicationContext(),
                             listDataHeader.get(groupPosition) + " Collapsed",
                             Toast.LENGTH_SHORT).show();
-
+                    */
                 }
             });
 
@@ -278,6 +201,13 @@ public class activity_screen extends ActionBarActivity
                 @Override
                 public boolean onChildClick(ExpandableListView parent, View v,
                                             int groupPosition, int childPosition, long id) {
+                    if(listDataHeader.get(groupPosition).equals("Shopping")) {
+                        Intent intent = new Intent(getActivity().getApplicationContext(), TaskInstructions.class);
+                        intent.putExtra("CategoryName", listDataHeader.get(groupPosition));
+                        intent.putExtra("TaskInstruction", listDataChild.get(listDataHeader.get(groupPosition)).get(childPosition));
+                        startActivity(intent);
+                    }
+                    /*
                     Toast.makeText(
                             getActivity().getApplicationContext(),
                             listDataHeader.get(groupPosition)
@@ -286,6 +216,7 @@ public class activity_screen extends ActionBarActivity
                                     listDataHeader.get(groupPosition)).get(
                                     childPosition), Toast.LENGTH_SHORT)
                             .show();
+                    */
                     return false;
                 }
             });

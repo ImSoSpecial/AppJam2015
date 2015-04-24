@@ -1,40 +1,38 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/TI_fragment_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="15dp"
     tools:context="jwake.myapplication.TaskInstructions$PlaceholderFragment">
-
-    <Button
-        android:id="@+id/TINextButton"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/custom_button"
-        android:textColor="#fff"
-        android:text="Next" />
-
 
     <TextView
         android:id="@+id/TITitleLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/section_label"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
         android:text="Task Name"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="50sp" />
+        android:textSize="30dp" />
 
     <ListView
         android:id="@+id/customList"
         android:layout_below="@+id/TITitleLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"></ListView>
 
-
+    <Button
+        android:id="@+id/TINextButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:background="@drawable/custom_button"
+        android:onClick="onNextClicked"
+        android:textColor="#fff"
+        android:text="Next" />
 
     <!--<TextView
         android:id="@+id/textView8"
@@ -50,4 +48,4 @@
         android:textSize="40sp" />-->
 
 
-</RelativeLayout>
+</LinearLayout>

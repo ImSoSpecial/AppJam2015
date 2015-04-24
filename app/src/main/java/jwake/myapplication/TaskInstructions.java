@@ -1,6 +1,7 @@
 package jwake.myapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -43,7 +44,8 @@ public class TaskInstructions extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        Bundle extras = getIntent().getExtras();
+        mTitle = extras.getString("CategoryName");
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -61,6 +63,7 @@ public class TaskInstructions extends ActionBarActivity
     }
 
     public void onSectionAttached(int number) {
+        /*
         switch (number) {
             case 1:
                 mTitle = getString(R.string.title_section1);
@@ -72,6 +75,7 @@ public class TaskInstructions extends ActionBarActivity
                 mTitle = getString(R.string.title_section3);
                 break;
         }
+        */
     }
 
     public void restoreActionBar() {
@@ -108,6 +112,11 @@ public class TaskInstructions extends ActionBarActivity
 //        }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onNextClicked(View view) {
+        Intent i = new Intent(this, EndTask.class);
+        startActivity(i);
     }
 
 
@@ -148,12 +157,15 @@ public class TaskInstructions extends ActionBarActivity
         DataBaseForStruggles dbManager;
         Tasks taskInstruction;
         ArrayList<Tasks> unsortedTasks;
+//        Bundle extras = getActivity().getIntent().getExtras();
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+            Bundle extras = getActivity().getIntent().getExtras();
             View rootView = inflater.inflate(R.layout.fragment_task_instructions, container, false);
-
+            TextView textTaskName = (TextView) rootView.findViewById(R.id.TITitleLabel);
+            textTaskName.setText(extras.getString("TaskInstruction"));
             dbManager = new DataBaseForStruggles(getActivity(), null, null, 1);
 
             unsortedTasks = dbManager.getAllTasksArray();
