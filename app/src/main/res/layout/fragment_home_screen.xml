@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:onClick="onActivityClicked"
             android:background="@drawable/custom_button"
+            android:textColor="#fff"
             android:text="Activity" />
 
         <Button
@@ -32,6 +33,7 @@
             android:layout_marginTop="50dp"
             android:onClick="onRecordsClicked"
             android:background="@drawable/custom_button"
+            android:textColor="#fff"
             android:text="Records" />
     </RelativeLayout>
 
