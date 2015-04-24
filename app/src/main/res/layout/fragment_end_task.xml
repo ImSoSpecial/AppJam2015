@@ -2,58 +2,44 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="15dp"
     android:background="@drawable/gradient_bg">
 
-    <Button
-        android:id="@+id/button2"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp"
-        android:layout_centerHorizontal="true"
-        android:onClick="onFinishClicked"
-        android:background="@drawable/custom_button"
-        android:textColor="#fff"
-        android:text="Finish" />
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/EndTaskTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="Task"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="50sp" />
+        android:textSize="30sp"
+        android:maxLines="2" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/EndTaskTitle"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="How did your child do?"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="30sp" />
+        android:textSize="24dp" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@+id/button2"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginTop="160dp">
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/textView2">
 
         <RadioButton
             android:id="@+id/radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1 Star" />
+            android:text="1 Star"
+            android:checked="true" />
 
         <RadioButton
             android:id="@+id/radioButton2"
@@ -79,6 +65,19 @@
             android:layout_height="wrap_content"
             android:text="5 Stars" />
     </RadioGroup>
+
+    <Button
+        android:id="@+id/button2"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="onFinishClicked"
+        android:background="@drawable/custom_button"
+        android:textColor="#fff"
+        android:text="Finish" />
 
 
 </RelativeLayout>

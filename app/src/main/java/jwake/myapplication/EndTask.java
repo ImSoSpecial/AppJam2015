@@ -140,7 +140,12 @@ public class EndTask extends ActionBarActivity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+            Bundle extras = getActivity().getIntent().getExtras();
             View rootView = inflater.inflate(R.layout.fragment_end_task, container, false);
+
+            TextView textTaskName = (TextView) rootView.findViewById(R.id.EndTaskTitle);
+            textTaskName.setText(extras.getString("TaskInstruction"));
+
             return rootView;
         }
 
