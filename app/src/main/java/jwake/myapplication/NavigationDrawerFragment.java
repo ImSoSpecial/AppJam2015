@@ -191,6 +191,7 @@ public class NavigationDrawerFragment extends Fragment {
         if(mCurrentSelectedPosition == 2 && !getActivity().getTitle().equals("HomeScreen")){
             Intent intent = new Intent(getActivity(), HomeScreen.class);
             startActivity(intent);
+            getActivity().finish();
         }
         if(mCurrentSelectedPosition == 3 && !getActivity().getTitle().equals("AboutScreen")){
             Intent intent = new Intent(getActivity(), AboutScreen.class);

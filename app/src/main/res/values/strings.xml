@@ -26,6 +26,19 @@
         a guide on what needs to be improved while you supervise your child’s training process and
         monitor his improvement. The earlier we start, the better!
     </string>
+    <string-array name="shopping_tasks">
+        <item>Know what he/she is shopping for</item>
+        <item>Remember where he/she parked</item>
+        <item>Grab shopping cart of basket depending on number of items</item>
+        <item>Search for item</item>
+        <item>Social Interaction</item>
+        <item>Return Item</item>
+        <item>Wait in line</item>
+        <item>Load items onto conveyor belt</item>
+        <item>Purchase item</item>
+        <item>Return to car</item>
+    </string-array>
+
     <string name="aboutparagraph">
         The goal of My Lil Sidekick is to serve as a guide for parents to teach their
         children to become independent. Autistic children are often ill-prepared to take care of
@@ -36,6 +49,7 @@
         monitor his improvement as he grows closer to becoming an independent individual. The earlier
         you start, the better!
     </string>
+
     <string name="title_activity_make_account">MakeAccount</string>
     <string name="title_activity_activity_screen">activity_screen</string>
     <string name="title_activity_end_task">EndTask</string>
