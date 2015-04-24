@@ -53,7 +53,7 @@ public class MakeAccount extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        mTitle = "Make Account";
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -71,6 +71,7 @@ public class MakeAccount extends ActionBarActivity
     }
 
     public void onSectionAttached(int number) {
+        /*
         switch (number) {
             case 1:
                 mTitle = getString(R.string.title_section1);
@@ -82,6 +83,7 @@ public class MakeAccount extends ActionBarActivity
                 mTitle = getString(R.string.title_section3);
                 break;
         }
+        */
     }
 
     public void restoreActionBar() {

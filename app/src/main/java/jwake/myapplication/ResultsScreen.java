@@ -3,6 +3,8 @@ package jwake.myapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.LayerDrawable;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -52,7 +54,7 @@ public class ResultsScreen extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        mTitle = "Activity Results";
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -70,6 +72,7 @@ public class ResultsScreen extends ActionBarActivity
     }
 
     public void onSectionAttached(int number) {
+        /*
         switch (number) {
             case 1:
                 mTitle = getString(R.string.title_section1);
@@ -81,6 +84,7 @@ public class ResultsScreen extends ActionBarActivity
                 mTitle = getString(R.string.title_section3);
                 break;
         }
+        */
     }
 
     public void restoreActionBar() {
@@ -161,6 +165,10 @@ public class ResultsScreen extends ActionBarActivity
             ratingBar = (RatingBar) rootView.findViewById(R.id.ratingBar);
             ratingBar.setIsIndicator(true);
 
+            LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
+            //stars.getDrawable(2).setColorFilter(0x000000, PorterDuff.Mode.SRC_ATOP);
+            //stars.getDrawable(1).setColorFilter(getResources().getColor(R.color.starPartiallySelected), PorterDuff.Mode.SRC_ATOP);
+            //stars.getDrawable(0).setColorFilter(getResources().getColor(R.color.starNotSelected), PorterDuff.Mode.SRC_ATOP);
 
             GraphView graph = (GraphView) rootView.findViewById(R.id.graph);
             GridLabelRenderer g = graph.getGridLabelRenderer();
@@ -191,7 +199,7 @@ public class ResultsScreen extends ActionBarActivity
 
         @Override
         public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
-            ratingBar.setRating(position%5);
+            ratingBar.setRating(position % 5);
         }
 
         @Override

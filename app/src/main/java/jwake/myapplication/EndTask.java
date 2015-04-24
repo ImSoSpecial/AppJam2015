@@ -40,7 +40,7 @@ public class EndTask extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        mTitle = "Task Finished";
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -62,7 +62,7 @@ public class EndTask extends ActionBarActivity
                 .commit();
     }
 
-    public void onSectionAttached(int number) {
+    public void onSectionAttached(int number) {/*
         switch (number) {
             case 1:
                 mTitle = getString(R.string.title_section1);
@@ -73,7 +73,7 @@ public class EndTask extends ActionBarActivity
             case 3:
                 mTitle = getString(R.string.title_section3);
                 break;
-        }
+        }*/
     }
 
     public void restoreActionBar() {

@@ -39,7 +39,7 @@ public class AboutScreen extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        mTitle = "About";
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -56,7 +56,7 @@ public class AboutScreen extends ActionBarActivity
                 .commit();
     }
 
-    public void onSectionAttached(int number) {
+    public void onSectionAttached(int number) {/*
         switch (number) {
             case 1:
                 mTitle = getString(R.string.title_section1);
@@ -67,7 +67,7 @@ public class AboutScreen extends ActionBarActivity
             case 3:
                 mTitle = getString(R.string.title_section3);
                 break;
-        }
+        }*/
     }
 
     public void restoreActionBar() {

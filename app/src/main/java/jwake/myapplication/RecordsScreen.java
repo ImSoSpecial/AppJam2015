@@ -39,7 +39,7 @@ public class RecordsScreen extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        mTitle = "Records";
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -57,6 +57,7 @@ public class RecordsScreen extends ActionBarActivity
     }
 
     public void onSectionAttached(int number) {
+        /*
         switch (number) {
             case 1:
                 mTitle = getString(R.string.title_section1);
@@ -67,7 +68,7 @@ public class RecordsScreen extends ActionBarActivity
             case 3:
                 mTitle = getString(R.string.title_section3);
                 break;
-        }
+        }*/
     }
 
     public void restoreActionBar() {
