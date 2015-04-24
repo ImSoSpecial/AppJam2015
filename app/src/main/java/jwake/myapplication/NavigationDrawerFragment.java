@@ -203,8 +203,12 @@ public class NavigationDrawerFragment extends Fragment {
             Intent intent = new Intent(getActivity(), AboutScreen.class);
             startActivity(intent);
         }
-        if(mCurrentSelectedPosition == 4 && !getActivity().getTitle().equals("OptionScreen")){
+        if(mCurrentSelectedPosition == 4 && !getActivity().getTitle().equals("OptionsScreen")){
             Intent intent = new Intent(getActivity(), OptionsScreen.class);
+            startActivity(intent);
+        }
+        if(mCurrentSelectedPosition == 1 && !getActivity().getTitle().equals("AccountScreen")){
+            Intent intent = new Intent(getActivity(), AccountScreen.class);
             startActivity(intent);
         }
         if (mDrawerListView != null) {
@@ -264,10 +268,10 @@ public class NavigationDrawerFragment extends Fragment {
             return true;
         }
 
-        if (item.getItemId() == R.id.action_example) {
-            Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
-            return true;
-        }
+//        if (item.getItemId() == R.id.action_example) {
+//            Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
