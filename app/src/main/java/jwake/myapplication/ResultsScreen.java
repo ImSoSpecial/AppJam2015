@@ -3,6 +3,9 @@ package jwake.myapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -18,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
@@ -44,7 +48,6 @@ public class ResultsScreen extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results_screen);
-
 
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -119,18 +122,20 @@ public class ResultsScreen extends ActionBarActivity
     public void onFinishClicked(View view) {
         Intent intent = new Intent(this, HomeScreen.class);
         startActivity(intent);
+        finish();
     }
 
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+    public static class PlaceholderFragment extends Fragment implements OnItemClickListener{
         /**
          * The fragment argument representing the section number for this
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
 
+        RatingBar ratingBar;
         /**
          * Returns a new instance of this fragment for the given section
          * number.
@@ -150,6 +155,13 @@ public class ResultsScreen extends ActionBarActivity
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_results_screen, container, false);
+
+            ListView listView = (ListView) rootView.findViewById(R.id.listView);
+            listView.setOnItemClickListener(this);
+            ratingBar = (RatingBar) rootView.findViewById(R.id.ratingBar);
+            ratingBar.setIsIndicator(true);
+
+
             GraphView graph = (GraphView) rootView.findViewById(R.id.graph);
             GridLabelRenderer g = graph.getGridLabelRenderer();
             Viewport v = graph.getViewport();
@@ -175,6 +187,11 @@ public class ResultsScreen extends ActionBarActivity
             graph.addSeries(series);
 
             return rootView;
+        }
+
+        @Override
+        public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+            ratingBar.setRating(position%5);
         }
 
         @Override
