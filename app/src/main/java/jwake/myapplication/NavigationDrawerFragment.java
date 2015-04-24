@@ -175,6 +175,12 @@ public class NavigationDrawerFragment extends Fragment {
             }
         };
 
+        // If the user hasn't 'learned' about the drawer, open it to introduce them to the drawer,
+        // per the navigation drawer design guidelines.
+        if (!mUserLearnedDrawer && !mFromSavedInstanceState) {
+            mDrawerLayout.openDrawer(mFragmentContainerView);
+        }
+
         // Defer code dependent on restoration of previous instance state.
         mDrawerLayout.post(new Runnable() {
             @Override
@@ -195,6 +201,10 @@ public class NavigationDrawerFragment extends Fragment {
         }
         if(mCurrentSelectedPosition == 3 && !getActivity().getTitle().equals("AboutScreen")){
             Intent intent = new Intent(getActivity(), AboutScreen.class);
+            startActivity(intent);
+        }
+        if(mCurrentSelectedPosition == 4 && !getActivity().getTitle().equals("OptionScreen")){
+            Intent intent = new Intent(getActivity(), OptionsScreen.class);
             startActivity(intent);
         }
         if (mDrawerListView != null) {
@@ -251,6 +261,11 @@ public class NavigationDrawerFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
+        if (item.getItemId() == R.id.action_example) {
+            Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
             return true;
         }
 
