@@ -16,7 +16,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 public class TaskInstructions extends ActionBarActivity
@@ -141,10 +145,23 @@ public class TaskInstructions extends ActionBarActivity
         public PlaceholderFragment() {
         }
 
+        DataBaseForStruggles dbManager;
+        Tasks taskInstruction;
+        ArrayList<Tasks> unsortedTasks;
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_task_instructions, container, false);
+
+            dbManager = new DataBaseForStruggles(getActivity(), null, null, 1);
+
+            unsortedTasks = dbManager.getAllTasksArray();
+
+            ListAdapter listAdapter = new TaskCustomAdapter(getActivity(), unsortedTasks);
+            ListView listViewContainer = (ListView) rootView.findViewById(R.id.customList);
+            listViewContainer.setAdapter(listAdapter);
+
             return rootView;
         }
 

@@ -44,7 +44,7 @@
         android:layout_above="@+id/graph"
         android:layout_centerHorizontal="true"
         android:stepSize="1"
-        android:numStars="5"/>
+        android:numStars="5" />
 
 
 </RelativeLayout>

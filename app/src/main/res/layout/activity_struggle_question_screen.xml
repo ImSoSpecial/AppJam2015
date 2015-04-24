@@ -27,7 +27,8 @@
             android:text="skip"
             android:background="@drawable/custom_button"
             android:onClick="onSkipStruggleClicked"
-            android:layout_weight="1"/>
+            android:textColor="#fff"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/NextButton"
@@ -37,7 +38,8 @@
             android:text="next"
             android:background="@drawable/custom_button"
             android:onClick="onNextStruggleClicked"
-            android:layout_weight="1"/>
+            android:textColor="#fff"
+            android:layout_weight="1" />
 
     </RelativeLayout>
 </LinearLayout>

@@ -2,6 +2,7 @@ package jwake.myapplication;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -41,14 +42,17 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_TASKINFO = "CREATE TABLE " + TABLE_TASKINFO + "(" +
             COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             COLUMN_TASK + " TEXT," +
-            COLUMN_IMAGE_PATH + " TEXT " +
+            COLUMN_IMAGE_PATH + " INTEGER " +
             ");";
 
     private static final String TAG = "DBManagerMessage";
     private SQLiteDatabase dbase;
-
+    Resources res;
+    String res2;
     public DataBaseForStruggles(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
+        res = context.getResources();
+        res2 = context.getPackageName();
     }
 
     @Override
@@ -69,10 +73,14 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
 
 
     private void addTasks() {
-        Tasks something1 = new Tasks("Task Description step 1", "imagePath1");
+        Tasks something1 = new Tasks("Task Description step 1", res.getIdentifier("logo", "drawable", res2));
         this.addTasks(something1);
-        Tasks something2 = new Tasks("Task Description step 2", "imagePath2");
+        Tasks something2 = new Tasks("Task Description step 2", res.getIdentifier("logo", "drawable", res2));
         this.addTasks(something2);
+        Tasks something3 = new Tasks("Task Description step 3", res.getIdentifier("logo", "drawable", res2));
+        this.addTasks(something3);
+        Tasks something4 = new Tasks("Task Description step 4", res.getIdentifier("logo", "drawable", res2));
+        this.addTasks(something4);
     }
 
     private void addTasks(Tasks t) {
@@ -81,6 +89,29 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
         values.put(COLUMN_IMAGE_PATH, t.getImage_Path());
         dbase.insert(TABLE_TASKINFO, null, values);
     }
+
+    public ArrayList<Tasks> getAllTasksArray() {
+        ArrayList<Tasks> tasksDetail = new ArrayList<Tasks>();
+
+        //select all query
+        String selectQuery = "SELECT * FROM " + TABLE_TASKINFO;
+        dbase = this.getReadableDatabase();
+        Cursor cursor = dbase.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            do {
+                Tasks quest = new Tasks();
+                quest.setID(cursor.getInt(0));
+                quest.setTask(cursor.getString(1));
+                quest.setImage_Path(cursor.getInt(2));
+                tasksDetail.add(quest);
+            } while (cursor.moveToNext());
+        }
+
+        return tasksDetail;
+    }
+
+    ///////////
 
 
     public void addQuestions() {
@@ -263,7 +294,7 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
         //Get the value?
         dbase.insert(TABLE_STRUGGLEINFO, null, values);
     }
-
+/*
     public List<SurveyQuestions> getAllQuestions() {
         List<SurveyQuestions> surQuest = new ArrayList<SurveyQuestions>();
 
@@ -285,7 +316,7 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
         }
 
         return surQuest;
-    }
+    }*/
 
 
     public ArrayList<SurveyQuestions> getAllQuestionsArray() {
@@ -309,48 +340,6 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
         }
 
         return surQuest;
-    }
-
-    //May not be needed
-    public String printSubCategory(String CAT) {
-        String FN = "";
-        SQLiteDatabase db = getWritableDatabase();
-        String query = "SELECT " + COLUMN_SUBCATEGORY + " FROM " + TABLE_STRUGGLEINFO + " WHERE " + COLUMN_CATEGORY + " = \"" +
-                CAT + "\"";
-
-        Cursor c = db.rawQuery(query, null);
-
-        if (c.moveToFirst()) {
-            //Look up what the set does
-            FN = c.getString(c.getColumnIndex(COLUMN_SUBCATEGORY));
-        }
-
-        db.close();
-        return FN;
-    }
-
-
-    //Prints each row from the database
-    public String databaseToString() {
-        String dbString = "";
-        SQLiteDatabase db = getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_STRUGGLEINFO + " WHERE 1";
-
-        //cursor point to a location in your results
-        Cursor c = db.rawQuery(query, null);
-        //move to the first row
-        c.moveToFirst();
-
-        while (!c.isAfterLast()) {
-            Log.i(TAG, c.getString(c.getColumnIndex(COLUMN_CATEGORY)) + " " + c.getString(c.getColumnIndex(COLUMN_SUBCATEGORY)));
-            if (c.getString(c.getColumnIndex(COLUMN_CATEGORY)) != null) {
-                dbString += c.getString(c.getColumnIndex(COLUMN_CATEGORY));
-                dbString += "\n";
-            }
-            c.moveToNext();
-        }
-        db.close();
-        return dbString;
     }
 
 }

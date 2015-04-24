@@ -5,17 +5,17 @@ public class Tasks {
 
     private int ID;
     private String Task;
-    private String Image_Path;
+    private int Image_Path;
 
     public Tasks() {
     }
 
-    public Tasks(String task, String image_Path) {
+    public Tasks(String task, int image_Path) {
         Task = task;
         Image_Path = image_Path;
     }
 
-    public Tasks(int ID, String task, String image_Path) {
+    public Tasks(int ID, String task, int image_Path) {
         this.ID = ID;
         Task = task;
         Image_Path = image_Path;
@@ -30,7 +30,7 @@ public class Tasks {
         return Task;
     }
 
-    public String getImage_Path() {
+    public int getImage_Path() {
         return Image_Path;
     }
 
@@ -43,7 +43,7 @@ public class Tasks {
         Task = task;
     }
 
-    public void setImage_Path(String image_Path) {
+    public void setImage_Path(int image_Path) {
         Image_Path = image_Path;
     }
 }
