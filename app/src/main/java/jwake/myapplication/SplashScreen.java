@@ -37,7 +37,7 @@ public class SplashScreen extends Activity {
                 SharedPreferences introFirstTime = getSharedPreferences("introInfo", Context.MODE_PRIVATE);
                 Intent i;
                 if (introFirstTime.getBoolean("introInfo", false) == true) {
-                    i = new Intent(SplashScreen.this, HomeScreen.class);
+                    i = new Intent(SplashScreen.this, activity_screen.class);
                 } else {
                     i = new Intent(SplashScreen.this, IntroductionScreen.class);
                 }

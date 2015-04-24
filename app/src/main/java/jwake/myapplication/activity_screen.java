@@ -1,23 +1,34 @@
 package jwake.myapplication;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
+import android.widget.BaseExpandableListAdapter;
+import android.widget.ExpandableListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.ExpandableListView.OnGroupClickListener;
+import android.widget.ExpandableListView.OnGroupCollapseListener;
+import android.widget.ExpandableListView.OnGroupExpandListener;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
 public class activity_screen extends ActionBarActivity
@@ -33,6 +44,11 @@ public class activity_screen extends ActionBarActivity
      */
     private CharSequence mTitle;
 
+    List<String> listDataHeader;
+    HashMap<String, List<String>> listDataChild;
+    ExpandableListView expListView;
+    ExpandableListAdapter listAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +62,72 @@ public class activity_screen extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+/*
+        expListView = (ExpandableListView) findViewById(R.id.ActlistView);
+        listDataChild = TaskDataProvider.getInfo();
+        listDataHeader = new ArrayList<String>(listDataChild.keySet());
+
+        listAdapter = new ExpandableListAdapter(this, listDataChild, listDataHeader);
+
+        expListView.setAdapter(listAdapter);
+
+        //Listview Group click listener
+
+        expListView.setOnGroupClickListener(new OnGroupClickListener() {
+
+            @Override
+            public boolean onGroupClick(ExpandableListView parent, View v,
+                                        int groupPosition, long id) {
+                // Toast.makeText(getApplicationContext(),
+                // "Group Clicked " + listDataHeader.get(groupPosition),
+                // Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
+
+        // Listview Group expanded listener
+        expListView.setOnGroupExpandListener(new OnGroupExpandListener() {
+
+            @Override
+            public void onGroupExpand(int groupPosition) {
+                Toast.makeText(getApplicationContext(),
+                        listDataHeader.get(groupPosition) + " Expanded",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Listview Group collasped listener
+        expListView.setOnGroupCollapseListener(new OnGroupCollapseListener() {
+
+            @Override
+            public void onGroupCollapse(int groupPosition) {
+                Toast.makeText(getApplicationContext(),
+                        listDataHeader.get(groupPosition) + " Collapsed",
+                        Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        // Listview on child click listener
+        expListView.setOnChildClickListener(new OnChildClickListener() {
+
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v,
+                                        int groupPosition, int childPosition, long id) {
+                Toast.makeText(
+                        getApplicationContext(),
+                        listDataHeader.get(groupPosition)
+                                + " : "
+                                + listDataChild.get(
+                                listDataHeader.get(groupPosition)).get(
+                                childPosition), Toast.LENGTH_SHORT)
+                        .show();
+                return false;
+            }
+        });
+        */
     }
+
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
@@ -136,10 +217,79 @@ public class activity_screen extends ActionBarActivity
         public PlaceholderFragment() {
         }
 
+        List<String> listDataHeader;
+        HashMap<String, List<String>> listDataChild;
+        ExpandableListView expListView;
+        ExpandableListAdapter listAdapter;
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_activity_screen, container, false);
+
+            expListView = (ExpandableListView) rootView.findViewById(R.id.ActlistView);
+            listDataChild = TaskDataProvider.getInfo();
+            listDataHeader = new ArrayList<String>(listDataChild.keySet());
+
+            listAdapter = new ExpandableListAdapter(getActivity(), listDataChild, listDataHeader);
+
+            expListView.setAdapter(listAdapter);
+
+            //Listview Group click listener
+
+            expListView.setOnGroupClickListener(new OnGroupClickListener() {
+
+                @Override
+                public boolean onGroupClick(ExpandableListView parent, View v,
+                                            int groupPosition, long id) {
+                    // Toast.makeText(getApplicationContext(),
+                    // "Group Clicked " + listDataHeader.get(groupPosition),
+                    // Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            });
+
+            // Listview Group expanded listener
+            expListView.setOnGroupExpandListener(new OnGroupExpandListener() {
+
+                @Override
+                public void onGroupExpand(int groupPosition) {
+                    Toast.makeText(getActivity().getApplicationContext(),
+                            listDataHeader.get(groupPosition) + " Expanded",
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            // Listview Group collasped listener
+            expListView.setOnGroupCollapseListener(new OnGroupCollapseListener() {
+
+                @Override
+                public void onGroupCollapse(int groupPosition) {
+                    Toast.makeText(getActivity().getApplicationContext(),
+                            listDataHeader.get(groupPosition) + " Collapsed",
+                            Toast.LENGTH_SHORT).show();
+
+                }
+            });
+
+            // Listview on child click listener
+            expListView.setOnChildClickListener(new OnChildClickListener() {
+
+                @Override
+                public boolean onChildClick(ExpandableListView parent, View v,
+                                            int groupPosition, int childPosition, long id) {
+                    Toast.makeText(
+                            getActivity().getApplicationContext(),
+                            listDataHeader.get(groupPosition)
+                                    + " : "
+                                    + listDataChild.get(
+                                    listDataHeader.get(groupPosition)).get(
+                                    childPosition), Toast.LENGTH_SHORT)
+                            .show();
+                    return false;
+                }
+            });
+
             return rootView;
         }
 
