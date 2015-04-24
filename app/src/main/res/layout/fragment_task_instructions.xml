@@ -22,16 +22,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:background="@drawable/custom_button"
+        android:textColor="#fff"
         android:text="Next" />
 
-    <Button
-        android:id="@+id/TIBackButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:text="Back" />
+
 
     <TextView
         android:id="@+id/TITitleLabel"

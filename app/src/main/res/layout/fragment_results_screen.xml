@@ -9,20 +9,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="jwake.myapplication.ResultsScreen$PlaceholderFragment">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="Activity"
-        android:textSize="50dp"></TextView>
-
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:entries="@array/shopping_tasks"
         android:layout_above="@+id/ratingBar"></ListView>
@@ -44,6 +34,7 @@
         android:layout_centerHorizontal="true"
         android:onClick="onFinishClicked"
         android:background="@drawable/custom_button"
+        android:textColor="#fff"
         android:text="Finish" />
 
     <RatingBar
