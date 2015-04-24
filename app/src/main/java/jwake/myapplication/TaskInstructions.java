@@ -157,7 +157,7 @@ public class TaskInstructions extends ActionBarActivity
         DataBaseForStruggles dbManager;
         Tasks taskInstruction;
         ArrayList<Tasks> unsortedTasks;
-//        Bundle extras = getActivity().getIntent().getExtras();
+        ArrayList<Tasks> sortedByTask;
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -169,8 +169,16 @@ public class TaskInstructions extends ActionBarActivity
             dbManager = new DataBaseForStruggles(getActivity(), null, null, 1);
 
             unsortedTasks = dbManager.getAllTasksArray();
+            sortedByTask = new ArrayList<Tasks>();
 
-            ListAdapter listAdapter = new TaskCustomAdapter(getActivity(), unsortedTasks);
+            for(int i = 0; i < unsortedTasks.size(); i++) {
+                if(extras.getString("TaskInstruction").equals(unsortedTasks.get(i).getTaskTitle())) {
+                    sortedByTask.add(unsortedTasks.get(i));
+                }
+            }
+
+
+            ListAdapter listAdapter = new TaskCustomAdapter(getActivity(), sortedByTask);
             ListView listViewContainer = (ListView) rootView.findViewById(R.id.customList);
             listViewContainer.setAdapter(listAdapter);
 

@@ -26,6 +26,7 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
     public static final String COLUMN_SUBSUBCATEGORY = "subSubCategory";
     public static final String COLUMN_QUESTION = "question";
     public static final String COLUMN_WORTH = "worth";
+    public static final String COLUMN_TASK_TITLE = "taskTitle";
     public static final String COLUMN_TASK = "task";
     public static final String COLUMN_IMAGE_PATH = "imagePath";
 
@@ -41,14 +42,15 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE_TASKINFO = "CREATE TABLE " + TABLE_TASKINFO + "(" +
             COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            COLUMN_TASK_TITLE + " TEXT," +
             COLUMN_TASK + " TEXT," +
             COLUMN_IMAGE_PATH + " INTEGER " +
             ");";
 
-    private static final String TAG = "DBManagerMessage";
     private SQLiteDatabase dbase;
     Resources res;
     String res2;
+
     public DataBaseForStruggles(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
         res = context.getResources();
@@ -73,18 +75,21 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
 
 
     private void addTasks() {
-        Tasks something1 = new Tasks("Task Description step 1", res.getIdentifier("logo", "drawable", res2));
+        Tasks something1 = new Tasks("Know what he/she is shopping for", "Task Description step 1", res.getIdentifier("logo", "drawable", res2));
         this.addTasks(something1);
-        Tasks something2 = new Tasks("Task Description step 2", res.getIdentifier("logo", "drawable", res2));
+        Tasks something2 = new Tasks("Know what he/she is shopping for", "Task Description step 2", res.getIdentifier("logo", "drawable", res2));
         this.addTasks(something2);
-        Tasks something3 = new Tasks("Task Description step 3", res.getIdentifier("logo", "drawable", res2));
+
+        Tasks something3 = new Tasks("Grab shopping cart of basket depending on number of items", "Task Description step 3", res.getIdentifier("logo", "drawable", res2));
         this.addTasks(something3);
-        Tasks something4 = new Tasks("Task Description step 4", res.getIdentifier("logo", "drawable", res2));
+
+        Tasks something4 = new Tasks("Search for item", "Task Description step 4", res.getIdentifier("logo", "drawable", res2));
         this.addTasks(something4);
     }
 
     private void addTasks(Tasks t) {
         ContentValues values = new ContentValues();
+        values.put(COLUMN_TASK_TITLE, t.getTaskTitle());
         values.put(COLUMN_TASK, t.getTask());
         values.put(COLUMN_IMAGE_PATH, t.getImage_Path());
         dbase.insert(TABLE_TASKINFO, null, values);
@@ -102,8 +107,9 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
             do {
                 Tasks quest = new Tasks();
                 quest.setID(cursor.getInt(0));
-                quest.setTask(cursor.getString(1));
-                quest.setImage_Path(cursor.getInt(2));
+                quest.setTaskTitle(cursor.getString(1));
+                quest.setTask(cursor.getString(2));
+                quest.setImage_Path(cursor.getInt(3));
                 tasksDetail.add(quest);
             } while (cursor.moveToNext());
         }
