@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rLay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="5dp"
@@ -13,14 +14,14 @@
         android:text="Activities"
         android:textSize="50sp"></TextView>
 
-    <ListView
+    <ExpandableListView
+        android:id="@+id/ActlistView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/textView2"
-        android:id="@+id/listView"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/button"
-        android:drawSelectorOnTop="false"></ListView>
+        android:drawSelectorOnTop="false"></ExpandableListView>
 
 
     <Button
