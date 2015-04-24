@@ -21,11 +21,13 @@
         </activity>
         <activity
             android:name=".HomeScreen"
-            android:label="@string/title_activity_home_screen" >
+            android:label="@string/title_activity_home_screen"
+            android:screenOrientation="sensorPortrait">
         </activity>
         <activity
             android:name=".MakeAccount"
-            android:label="@string/title_activity_make_account" >
+            android:label="@string/title_activity_make_account"
+            android:screenOrientation="sensorPortrait">
         </activity>
         <activity
             android:name=".activity_screen"
@@ -49,31 +51,38 @@
         </activity>
         <activity
             android:name=".AboutScreen"
-            android:label="@string/title_activity_about_screen" >
+            android:label="@string/title_activity_about_screen"
+            android:screenOrientation="sensorPortrait">
         </activity>
         <activity
             android:name=".RecordsScreen"
-            android:label="@string/title_activity_records_screen" >
+            android:label="@string/title_activity_records_screen"
+            android:screenOrientation="sensorPortrait">
         </activity>
         <activity
             android:name=".StruggleQuestionScreen"
-            android:label="@string/title_activity_struggle_question_screen" >
+            android:label="@string/title_activity_struggle_question_screen"
+            android:screenOrientation="sensorPortrait">
         </activity>
         <activity
             android:name=".IntroductionScreen"
-            android:label="@string/title_activity_introduction_screen" >
+            android:label="@string/title_activity_introduction_screen"
+            android:screenOrientation="sensorPortrait">
         </activity>
         <activity
             android:name=".OptionsScreen"
-            android:label="@string/title_activity_options_screen" >
+            android:label="@string/title_activity_options_screen"
+            android:screenOrientation="sensorPortrait">
         </activity>
         <activity
             android:name=".UserScreen"
-            android:label="@string/title_activity_user_screen" >
+            android:label="@string/title_activity_user_screen"
+            android:screenOrientation="sensorPortrait">
         </activity>
         <activity
             android:name=".AccountScreen"
-            android:label="@string/title_activity_account_screen" >
+            android:label="@string/title_activity_account_screen"
+            android:screenOrientation="sensorPortrait">
         </activity>
     </application>
 
