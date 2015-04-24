@@ -63,6 +63,18 @@
             android:name=".IntroductionScreen"
             android:label="@string/title_activity_introduction_screen" >
         </activity>
+        <activity
+            android:name=".OptionsScreen"
+            android:label="@string/title_activity_options_screen" >
+        </activity>
+        <activity
+            android:name=".UserScreen"
+            android:label="@string/title_activity_user_screen" >
+        </activity>
+        <activity
+            android:name=".AccountScreen"
+            android:label="@string/title_activity_account_screen" >
+        </activity>
     </application>
 
 </manifest>

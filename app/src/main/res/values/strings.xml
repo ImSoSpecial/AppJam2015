@@ -60,6 +60,9 @@
     <string name="title_activity_records_screen">RecordsScreen</string>
     <string name="title_activity_struggle_question_screen">StruggleQuestionScreen</string>
     <string name="title_activity_introduction_screen">Welcome!</string>
+    <string name="title_activity_options_screen">OptionsScreen</string>
+    <string name="title_activity_user_screen">UserScreen</string>
+    <string name="title_activity_account_screen">AccountScreen</string>
 
 
 </resources>

@@ -115,10 +115,10 @@ public class ResultsScreen extends ActionBarActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -166,9 +166,7 @@ public class ResultsScreen extends ActionBarActivity
             ratingBar.setIsIndicator(true);
 
             LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
-            //stars.getDrawable(2).setColorFilter(0x000000, PorterDuff.Mode.SRC_ATOP);
-            //stars.getDrawable(1).setColorFilter(getResources().getColor(R.color.starPartiallySelected), PorterDuff.Mode.SRC_ATOP);
-            //stars.getDrawable(0).setColorFilter(getResources().getColor(R.color.starNotSelected), PorterDuff.Mode.SRC_ATOP);
+            stars.getDrawable(2).setColorFilter(0xffd03f4a, PorterDuff.Mode.SRC_ATOP);
 
             GraphView graph = (GraphView) rootView.findViewById(R.id.graph);
             GridLabelRenderer g = graph.getGridLabelRenderer();
@@ -184,7 +182,7 @@ public class ResultsScreen extends ActionBarActivity
                     new DataPoint(4, 4),
                     new DataPoint(5, 5)
             });
-            series.setColor(Color.RED);
+            series.setColor(0xffd03f4a);
             g.setNumVerticalLabels(6);
             g.setNumHorizontalLabels((int)series.getHighestValueX()+2);
             v.setScrollable(true);
