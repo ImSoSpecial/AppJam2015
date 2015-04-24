@@ -11,16 +11,15 @@ public class TaskDataProvider {
 
 
         List<String> shopping = new ArrayList<String>();
-        shopping.add("Know what he/she is shopping for");
-        shopping.add("Grab shopping cart of basket depending on number of items");
-        shopping.add("Search for item");
-        shopping.add("Social Interaction");
-        shopping.add("Wait in line");
-        shopping.add("Load items onto conveyor belt");
-        shopping.add("Purchase item");
+        shopping.add("Know What He/She is Shopping For");
+        shopping.add("Remember Parking Location");
+        shopping.add("Grab Shopping Cart or Shopping Basket");
+        shopping.add("Search for Item(s)");
+        shopping.add("Possible Social Interaction");
+        shopping.add("Load Items For Purchase");
         shopping.add("Return Item");
-        shopping.add("Remember where he/she parked");
-        shopping.add("Return to car");
+        shopping.add("Purchase Item");
+        shopping.add("Return to the Car");
 
         List<String> bank = new ArrayList<String>();
         bank.add("Remember where he/she parked");

@@ -75,16 +75,56 @@ public class DataBaseForStruggles extends SQLiteOpenHelper {
 
 
     private void addTasks() {
-        Tasks something1 = new Tasks("Know what he/she is shopping for", "Task Description step 1", res.getIdentifier("logo", "drawable", res2));
+        Tasks something1 = new Tasks("Know What He/She is Shopping For", "To keep your child focused on the task at hand, be sure to have him/her write down a shopping list of items he/she plans to buy from the supermarket. Try to keep the items organized by their categories such as dairy and meat.", res.getIdentifier("list1", "drawable", res2));
         this.addTasks(something1);
-        Tasks something2 = new Tasks("Know what he/she is shopping for", "Task Description step 2", res.getIdentifier("logo", "drawable", res2));
+        Tasks something2 = new Tasks("Know What He/She is Shopping For", "When you feel that he/she is mentally ready, your child can start to memorize the shopping list without the need to record it on paper. Start off with fewer items and gradually increase the number of items to remember.", res.getIdentifier("kidthinking", "drawable", res2));
         this.addTasks(something2);
 
-        Tasks something3 = new Tasks("Grab shopping cart of basket depending on number of items", "Task Description step 3", res.getIdentifier("logo", "drawable", res2));
+        Tasks something3 = new Tasks("Remember Parking Location", "Have your child take a mental note of where you two parked. Be ready to test him/her when you leave to return to your vehicle.", res.getIdentifier("parkinglot", "drawable", res2));
         this.addTasks(something3);
 
-        Tasks something4 = new Tasks("Search for item", "Task Description step 4", res.getIdentifier("logo", "drawable", res2));
+        Tasks something4 = new Tasks("Grab Shopping Cart or Shopping Basket", "Teach your child to be able to choose between a shopping cart and a shopping basket depending on how many items he plans to buy.", res.getIdentifier("chart1", "drawable", res2));
         this.addTasks(something4);
+
+        Tasks something5 = new Tasks("Search for Item(s)", "Teach your child to find items by understanding the category in which the items belong in. Have him/her search for the category by reading the aisle labels.", res.getIdentifier("search1", "drawable", res2));
+        this.addTasks(something5);
+        Tasks something6 = new Tasks("Search for Item(s)", "When an item is found, have your child place the item in the cart/basket.", res.getIdentifier("fullshoppingcart", "drawable", res2));
+        this.addTasks(something6);
+        Tasks something7 = new Tasks("Search for Item(s)", "Once it is confirmed that your child has obtained an item on the shopping list, make sure that he/she remembers to check it off.", res.getIdentifier("shoppinglist", "drawable", res2));
+        this.addTasks(something7);
+        Tasks something8 = new Tasks("Search for Item(s)", "If all items are checked off, it is time to head to the cash register for purchase.", res.getIdentifier("list3", "drawable", res2));
+        this.addTasks(something8);
+        Tasks something9 = new Tasks("Search for Item(s)", "If your child has trouble finding the item or requires any help in general, have him/her ask for help from an employee who works there.", res.getIdentifier("search2", "drawable", res2));
+        this.addTasks(something9);
+
+        Tasks something10 = new Tasks("Possible Social Interaction", "If your child requires the assistance of an employee of the building, make sure he/she approaches with “Excuse me,” following with a polite and respectful request for help.", res.getIdentifier("supermarketshoppinghelp", "drawable", res2));
+        this.addTasks(something10);
+        Tasks something11 = new Tasks("Possible Social Interaction", "After your child has received help, make sure that he/she thanks the helper.", res.getIdentifier("shakinghands", "drawable", res2));
+        this.addTasks(something11);
+
+        Tasks something12 = new Tasks("Load Items For Purchase", "Have your child wait patiently in line without getting impatient and causing any unpleasantness to his/her surroundings.", res.getIdentifier("waitinginline", "drawable", res2));
+        this.addTasks(something12);
+        Tasks something13 = new Tasks("Load Items For Purchase", "Before loading items, be sure that your child separates his items from other people’s items with the separator bar.", res.getIdentifier("grocery2", "drawable", res2));
+        this.addTasks(something13);
+        Tasks something14 = new Tasks("Load Items For Purchase", "Have your child load all items onto the conveyor belt.", res.getIdentifier("grocery3", "drawable", res2));
+        this.addTasks(something14);
+
+        Tasks something15 = new Tasks("Return Item", "Have your child approach the clerk to present the item to return.", res.getIdentifier("return2", "drawable", res2));
+        this.addTasks(something15);
+        Tasks something16 = new Tasks("Return Item", "Your child should then present the receipt containing the record of the item's purchase. Make sure your child checks that he/she received the right amount of money back by checking the receipt.", res.getIdentifier("return3", "drawable", res2));
+        this.addTasks(something16);
+
+        Tasks something17 = new Tasks("Purchase Item", "If paying with cash, make sure your child gives enough cash to the clerk.", res.getIdentifier("paycash", "drawable", res2));
+        this.addTasks(something17);
+        Tasks something18 = new Tasks("Purchase Item", "If paying with a credit/debit card, make sure your child is able to swipe and sign his/her signature correctly.", res.getIdentifier("paycard", "drawable", res2));
+        this.addTasks(something18);
+        Tasks something19 = new Tasks("Purchase Item", "If there is left over change, make sure your child collects the change and is able to verify that the correct value was received.", res.getIdentifier("getchange", "drawable", res2));
+        this.addTasks(something19);
+
+        Tasks something20 = new Tasks("Return to the Car", "Test to see if your child remembers where the vehicle is parked and have him/her find it.", res.getIdentifier("returnparking", "drawable", res2));
+        this.addTasks(something20);
+        Tasks something21 = new Tasks("Return to the Car", "Have your child load the items from the shopping cart/basket into the car.", res.getIdentifier("loadcar", "drawable", res2));
+        this.addTasks(something21);
     }
 
     private void addTasks(Tasks t) {
