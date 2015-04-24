@@ -116,6 +116,7 @@ public class TaskInstructions extends ActionBarActivity
 
     public void onNextClicked(View view) {
         Intent i = new Intent(this, EndTask.class);
+        i.putExtra("TaskInstruction",getIntent().getExtras().getString("TaskInstruction"));
         startActivity(i);
     }
 
@@ -155,7 +156,6 @@ public class TaskInstructions extends ActionBarActivity
         }
 
         DataBaseForStruggles dbManager;
-        Tasks taskInstruction;
         ArrayList<Tasks> unsortedTasks;
         ArrayList<Tasks> sortedByTask;
 
