@@ -170,6 +170,7 @@
                 android:layout_alignParentRight="true"
                 android:onClick="onFinishButtonClick"
                 android:background="@drawable/custom_button"
+                android:textColor="#fff"
                 android:text="Finish" />
         </RelativeLayout>
     </ScrollView>
