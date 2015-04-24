@@ -19,12 +19,12 @@ public class TaskDataProvider {
         shopping.add("12 Angry Men");
 
         List<String> bank = new ArrayList<String>();
-        bank.add("The Conjuring");
-        bank.add("Despicable Me 2");
-        bank.add("Turbo");
-        bank.add("Grown Ups 2");
-        bank.add("Red 2");
-        bank.add("The Wolverine");
+        bank.add("Remember where he/she parked");
+        bank.add("Enter the bank and wait in line");
+        bank.add("Case 1: Deposit check");
+        bank.add("Case 2: Deposit cash");
+        bank.add("Case 3: Withdraw cash");
+        bank.add("Case 4: Get a new credit/debit card");
 
         List<String> airport = new ArrayList<String>();
         airport.add("2 Guns");
