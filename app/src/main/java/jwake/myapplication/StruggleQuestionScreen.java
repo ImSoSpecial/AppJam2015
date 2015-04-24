@@ -43,8 +43,7 @@ public class StruggleQuestionScreen extends ActionBarActivity {
         sortByCategory = new ArrayList<ArrayList<SurveyQuestions>>();
 
         for(int i = 0; i < unSorted.size(); i++) {
-            SurveyQuestions SQ = new SurveyQuestions(unSorted.get(i).getCategory(), unSorted.get(i).getSubCategory(),
-                    unSorted.get(i).getSubSubCategory(), unSorted.get(i).getQuestion(), unSorted.get(i).getAnswer());
+            SurveyQuestions SQ = new SurveyQuestions(unSorted.get(i).getCategory(), unSorted.get(i).getSubCategory(), unSorted.get(i).getQuestion(), unSorted.get(i).getAnswer());
 
             if(unSorted.get(i).getCategory().equals(currentCat)) {
                addCategory.add(SQ);
